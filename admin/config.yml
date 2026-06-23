@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "vi"
+
+collections:
+  - name: "insights"
+    label: "Bài Viết — Insights"
+    folder: "content/insights"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Tiêu đề"
+        name: "title"
+        widget: "string"
+
+      - label: "Danh mục"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Chi Phí Ẩn", value: "chi-phi-an" }
+          - { label: "BOSS Framework™", value: "boss-framework" }
+          - { label: "Chiến Lược Thực Chiến", value: "chien-luoc" }
+          - { label: "Skills", value: "skills" }
+
+      - label: "Tóm tắt"
+        name: "excerpt"
+        widget: "text"
+        hint: "2–3 câu. Hiển thị ở trang chủ."
+
+      - label: "Ngày đăng"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+
+      - label: "Nội dung"
+        name: "body"
+        widget: "markdown"
