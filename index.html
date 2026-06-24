@@ -28,6 +28,7 @@
             line-height: 1.6;
         }
 
+        /* ─── NAV ─── */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -39,232 +40,160 @@
             align-items: center;
             justify-content: space-between;
         }
-        .nav-logo { font-size: 17px; font-weight: 900; color: var(--navy); letter-spacing: 3px; }
+        .nav-logo {
+            font-size: 17px;
+            font-weight: 900;
+            color: var(--navy);
+            letter-spacing: 3px;
+        }
         .nav-logo span { color: var(--gold); }
         .nav-links { display: flex; gap: 36px; list-style: none; }
-        .nav-links a { color: var(--text-mid); text-decoration: none; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; transition: color .2s; }
+        .nav-links a {
+            color: var(--text-mid);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color .2s;
+        }
         .nav-links a:hover { color: var(--navy); }
 
-        .hero { background: var(--cream); min-height: 100vh; display: flex; align-items: center; padding: 120px 64px 100px; position: relative; overflow: hidden; }
-        .hero::after { content: '"'; position: absolute; right: 48px; top: 60px; font-size: 480px; font-family: Georgia, serif; color: var(--navy); opacity: 0.05; line-height: 1; pointer-events: none; user-select: none; }
-        .hero-content { max-width: 720px; position: relative; z-index: 1; }
-        .hero-eyebrow { color: var(--gold); font-size: 11px; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 32px; display: flex; align-items: center; gap: 14px; }
-        .hero-eyebrow::before { content: ''; display: inline-block; width: 48px; height: 2px; background: var(--gold); flex-shrink: 0; }
-        .hero-headline { font-size: 40px; font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 32px; }
-        .hero-headline .gold { color: var(--gold); }
-        .hero-sub { font-size: 17px; color: var(--text-mid); line-height: 1.8; margin-bottom: 52px; max-width: 560px; }
-        .hero-cta { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-        .btn-primary { background: var(--navy); color: var(--white); padding: 17px 38px; font-weight: 900; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: background .2s; display: inline-block; }
-        .btn-primary:hover { background: #2A4F7C; }
-        .btn-ghost { color: var(--navy); font-size: 13px; text-decoration: none; border-bottom: 1px solid var(--navy); padding-bottom: 2px; opacity: 0.6; transition: opacity .2s; }
-        .btn-ghost:hover { opacity: 1; }
-        .hero-stats { position: absolute; right: 64px; bottom: 80px; display: flex; gap: 52px; }
-        .stat { text-align: right; }
-        .stat-number { font-size: 44px; font-weight: 900; color: var(--navy); line-height: 1; }
-        .stat-label { font-size: 10px; color: var(--text-mid); text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
-
-        section { padding: 104px 64px; }
-        .eyebrow { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-        .rule { width: 52px; height: 3px; background: var(--gold); margin-bottom: 32px; }
-        .sec-title { font-size: 42px; font-weight: 900; color: var(--navy); line-height: 1.18; margin-bottom: 18px; }
-        .sec-sub { font-size: 16px; color: var(--text-mid); line-height: 1.75; max-width: 540px; }
-        .inner { max-width: 1160px; margin: 0 auto; }
-
-        .about { background: var(--white); }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center; }
-        .about-quote { font-size: 22px; font-weight: 900; color: var(--navy); line-height: 1.55; border-left: 4px solid var(--gold); padding-left: 22px; margin-bottom: 28px; }
-        .about-text p { font-size: 15px; color: var(--text-mid); line-height: 1.85; margin-bottom: 18px; }
-        .about-text p strong { color: var(--navy); }
-        .boss-stack { display: flex; flex-direction: column; }
-        .boss-row { display: grid; grid-template-columns: 72px 1fr; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--cream-dark); }
-        .boss-row:last-child { border-bottom: none; }
-        .b-char { font-size: 50px; font-weight: 900; color: var(--gold); line-height: 1; }
-        .b-content h3 { font-size: 17px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
-        .b-content p { font-size: 13px; color: var(--text-mid); line-height: 1.55; }
-
-        .framework { background: var(--cream); }
-        .fw-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; }
-        .fw-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-        .fw-card { background: var(--white); border: 1px solid var(--cream-dark); padding: 36px 28px; transition: border-color .2s, box-shadow .2s; }
-        .fw-card:hover { border-color: var(--navy); box-shadow: 0 6px 24px rgba(30,58,95,0.07); }
-        .fw-card.on { border-top: 3px solid var(--navy); border-color: var(--navy); }
-        .fw-phase { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-        .fw-title { font-size: 24px; font-weight: 900; color: var(--navy); margin-bottom: 12px; }
-        .fw-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 24px; }
-        .fw-list { list-style: none; }
-        .fw-list li { font-size: 13px; color: var(--text-mid); padding: 7px 0; border-bottom: 1px solid var(--cream-dark); display: flex; gap: 10px; }
-        .fw-list li:last-child { border-bottom: none; }
-        .fw-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
-
-        .boss-fw { background: var(--cream); }
-        .bfw-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 56px; }
-        .bfw-card { background: var(--white); border: 1px solid var(--cream-dark); padding: 36px 28px; display: flex; flex-direction: column; gap: 0; transition: box-shadow .2s, border-color .2s; }
-        .bfw-card:hover { border-color: var(--navy); box-shadow: 0 6px 24px rgba(30,58,95,0.07); }
-        .bfw-num { font-size: 11px; letter-spacing: 3px; color: var(--gold); margin-bottom: 6px; }
-        .bfw-stage { font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 10px; padding-bottom: 14px; border-bottom: 2px solid var(--cream-dark); }
-        .bfw-title { font-size: 15px; font-weight: 900; color: var(--navy); margin: 16px 0 10px; }
-        .bfw-desc { font-size: 13px; color: var(--text-mid); line-height: 1.75; margin-bottom: 24px; flex: 1; }
-        .bfw-signal { background: var(--cream); padding: 16px 18px; margin-top: auto; }
-        .bfw-signal-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.5; margin-bottom: 10px; }
-        .bfw-signal ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-        .bfw-signal ul li { font-size: 12px; color: var(--text-mid); line-height: 1.5; padding-left: 14px; position: relative; }
-        .bfw-signal ul li::before { content: '·'; position: absolute; left: 0; color: var(--gold); font-size: 18px; line-height: 1.1; }
-
-        .audit-tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .audit-card { background: var(--white); border: 1px solid var(--cream-dark); border-top: 4px solid var(--cream-dark); padding: 44px 40px; transition: border-color .2s, box-shadow .2s; }
-        .audit-card:hover { border-color: var(--navy); box-shadow: 0 8px 32px rgba(30,58,95,0.07); }
-        .audit-card.featured { border-color: var(--navy); border-top: 4px solid var(--gold); }
-        .audit-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-        .audit-title { font-size: 28px; font-weight: 900; color: var(--navy); margin-bottom: 14px; }
-        .audit-sub { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
-        .audit-body { margin-top: 32px; display: flex; flex-direction: column; gap: 28px; }
-        .audit-what-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--navy); opacity: 0.5; margin-bottom: 14px; }
-        .audit-list { list-style: none; }
-        .audit-list li { font-size: 13px; color: var(--text-mid); padding: 9px 0; border-bottom: 1px solid var(--cream-dark); display: flex; flex-direction: column; gap: 3px; }
-        .audit-list li:last-child { border-bottom: none; }
-        .audit-list li strong { color: var(--navy); font-size: 13px; }
-        .audit-list li span { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
-        .audit-card:not(.featured) .audit-list li { flex-direction: row; gap: 10px; align-items: flex-start; }
-        .audit-card:not(.featured) .audit-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
-        .audit-cta { display: block; margin-top: 28px; text-align: center; padding: 14px 20px; font-size: 12px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 2px solid var(--navy); color: var(--navy); transition: .2s; }
-        .audit-cta:hover { background: var(--navy); color: var(--white); }
-        .audit-cta-featured { background: var(--navy); color: var(--white); }
-        .audit-cta-featured:hover { background: #2A4F7C; }
-
-        .errc-wrap { margin-top: 40px; border: 1px solid var(--cream-dark); border-top: 4px solid var(--navy); padding: 44px 40px; background: var(--white); }
-        .errc-header { margin-bottom: 36px; }
-        .errc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--cream-dark); }
-        .errc-cell { background: var(--white); padding: 28px 24px; }
-        .errc-label { font-size: 13px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid; }
-        .errc-cell.eliminate .errc-label { color: var(--navy); border-color: var(--navy); }
-        .errc-cell.reduce .errc-label { color: #B85C38; border-color: #B85C38; }
-        .errc-cell.raise .errc-label { color: #2E7D4F; border-color: #2E7D4F; }
-        .errc-cell.create .errc-label { color: var(--gold); border-color: var(--gold); }
-        .errc-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 18px; }
-        .errc-examples { display: flex; flex-direction: column; gap: 8px; }
-        .errc-examples span { font-size: 12px; color: var(--text-mid); background: var(--cream); padding: 7px 12px; line-height: 1.5; }
-        .errc-note { margin-top: 20px; font-size: 11px; color: var(--text-mid); opacity: 0.6; font-style: italic; }
-
-        .services { background: var(--white); }
-        .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
-        .svc-card { background: var(--cream); padding: 40px 36px; border-top: 4px solid transparent; transition: border-color .2s, box-shadow .2s; }
-        .svc-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(30,58,95,0.06); }
-        .svc-card.feat { background: var(--white); border: 2px solid var(--navy); border-top: 4px solid var(--navy); }
-        .svc-card.feat:hover { box-shadow: 0 8px 32px rgba(30,58,95,0.1); }
-        .tier-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
-        .svc-title { font-size: 23px; font-weight: 900; color: var(--navy); margin-bottom: 10px; }
-        .svc-desc { font-size: 14px; color: var(--text-mid); line-height: 1.75; margin-bottom: 28px; }
-        .svc-list { list-style: none; margin-bottom: 32px; }
-        .svc-list li { font-size: 13px; color: var(--text-mid); padding: 8px 0; border-bottom: 1px solid var(--cream-dark); display: flex; gap: 10px; }
-        .svc-list li:last-child { border-bottom: none; }
-        .svc-list li::before { content: '✓'; color: var(--gold); font-weight: 900; flex-shrink: 0; }
-        .svc-cta { display: block; text-align: center; padding: 14px; font-size: 12px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: .2s; }
-        .svc-card:not(.feat) .svc-cta { border: 2px solid var(--navy); color: var(--navy); }
-        .svc-card:not(.feat) .svc-cta:hover { background: var(--navy); color: var(--white); }
-        .svc-card.feat .svc-cta { background: var(--navy); color: var(--white); }
-        .svc-card.feat .svc-cta:hover { background: #2A4F7C; }
-
-        .cases { background: var(--cream); }
-        .cases-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 24px; margin-top: 56px; }
-        .case-card { padding: 48px; position: relative; }
-        .case-card.feat { background: var(--white); border: 2px solid var(--navy); border-left: 6px solid var(--navy); }
-        .case-card.side { background: var(--white); border: 1px solid var(--cream-dark); display: flex; flex-direction: column; justify-content: center; }
-        .case-badge { display: inline-block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; margin-bottom: 24px; }
-        .case-card.feat .case-badge { background: var(--cream); color: var(--navy); border: 1px solid var(--cream-dark); }
-        .case-card.side .case-badge { background: var(--cream); color: var(--text-mid); border: 1px solid var(--cream-dark); }
-        .case-title { font-size: 28px; font-weight: 900; color: var(--navy); margin-bottom: 10px; }
-        .case-meta { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
-        .case-card.side .case-meta { color: var(--text-mid); }
-        .case-desc { font-size: 15px; color: var(--text-mid); line-height: 1.8; }
-
-        .blog { background: var(--white); }
-
-        .anon-card { display: flex; align-items: flex-start; gap: 16px; margin-top: 36px; background: var(--navy); border: 1px solid rgba(201,168,76,0.4); padding: 24px 28px; max-width: 640px; margin-left: auto; margin-right: auto; }
-        .anon-icon { width: 22px; height: 22px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
-        .anon-title { font-size: 13px; font-weight: 900; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-        .anon-body { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.7; }
-        .anon-note { margin-top: 28px; font-size: 13px; color: rgba(255,255,255,0.55); display: flex; align-items: center; justify-content: center; gap: 8px; }
-
-        .bfw-icon, .svc-icon, .btn-icon { display: inline-block; vertical-align: middle; margin-right: 8px; stroke-width: 1.5; }
-        .bfw-icon { width: 26px; height: 26px; color: var(--gold); }
-        .svc-icon { width: 24px; height: 24px; color: var(--gold); }
-        .btn-icon { width: 20px; height: 20px; }
-        .audit-icon { width: 26px; height: 26px; color: var(--gold); display: inline-block; vertical-align: middle; margin-right: 8px; stroke-width: 1.5; }
-
-        .contact { background: var(--cream); text-align: center; }
-        .contact .rule { margin: 0 auto 36px; }
-        .contact .sec-title { max-width: 680px; margin: 0 auto 18px; }
-        .contact .sec-sub { margin: 0 auto 52px; text-align: center; }
-        .contact-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .c-btn { padding: 18px 44px; font-size: 13px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: .2s; display: inline-block; }
-        .c-btn.navy-btn { background: var(--navy); color: var(--white); }
-        .c-btn.navy-btn:hover { background: #2A4F7C; }
-        .c-btn.outline-btn { border: 2px solid var(--navy); color: var(--navy); }
-        .c-btn.outline-btn:hover { background: var(--navy); color: var(--white); }
-        .contact-note { margin-top: 44px; font-size: 12px; color: var(--text-mid); letter-spacing: 2px; text-transform: uppercase; }
-
-        footer { background: var(--white); border-top: 1px solid var(--cream-dark); padding: 40px 64px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
-        .f-logo { font-size: 15px; font-weight: 900; color: var(--navy); letter-spacing: 3px; }
-        .f-nav { display: flex; gap: 24px; flex-wrap: wrap; }
-        .f-nav a { font-size: 12px; color: var(--text-mid); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: color .2s; }
-        .f-nav a:hover { color: var(--navy); }
-        .f-contact { display: flex; gap: 16px; }
-        .f-contact a { font-size: 12px; color: var(--gold); text-decoration: none; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; transition: opacity .2s; }
-        .f-contact a:hover { opacity: 0.7; }
-        .f-copy { font-size: 11px; color: var(--text-mid); }
-
-        @media (max-width: 960px) {
-            nav { padding: 16px 24px; }
-            .nav-links { display: none; }
-            section { padding: 72px 24px; }
-            .hero { padding: 100px 24px 100px; }
-            .hero-headline { font-size: 38px; }
-            .hero-stats { position: static; margin-top: 52px; justify-content: flex-start; }
-            .about-grid, .fw-cards, .audit-tracks, .svc-grid, .cases-grid, .bfw-cards, .errc-grid { grid-template-columns: 1fr; }
-            .fw-head { flex-direction: column; align-items: flex-start; gap: 12px; }
-            footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 24px; }
+        /* ─── HERO ─── */
+        .hero {
+            background: var(--cream);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 64px 100px;
+            position: relative;
+            overflow: hidden;
         }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-</head>
-<body>
+        .hero::after {
+            content: '"';
+            position: absolute;
+            right: 48px;
+            top: 60px;
+            font-size: 480px;
+            font-family: Georgia, serif;
+            color: var(--navy);
+            opacity: 0.05;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+        .hero-content {
+            max-width: 720px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-eyebrow {
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 48px;
+            height: 2px;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+        .hero-headline {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 32px;
+        }
+        .hero-headline .gold { color: var(--gold); }
+        .hero-sub {
+            font-size: 17px;
+            color: var(--text-mid);
+            line-height: 1.8;
+            margin-bottom: 52px;
+            max-width: 560px;
+        }
+        .hero-cta { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--navy);
+            color: var(--white);
+            padding: 17px 38px;
+            font-weight: 900;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background .2s;
+            display: inline-block;
+        }
+        .btn-primary:hover { background: #2A4F7C; }
+        .btn-ghost {
+            color: var(--navy);
+            font-size: 13px;
+            text-decoration: none;
+            border-bottom: 1px solid var(--navy);
+            padding-bottom: 2px;
+            opacity: 0.6;
+            transition: opacity .2s;
+        }
+        .btn-ghost:hover { opacity: 1; }
+        .hero-stats {
+            position: absolute;
+            right: 64px;
+            bottom: 80px;
+            display: flex;
+            gap: 52px;
+        }
+        .stat { text-align: right; }
+        .stat-number {
+            font-size: 44px;
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 10px;
+            color: var(--text-mid);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
 
-<!-- NAV -->
-<nav>
-    <div class="nav-logo">B.O.S.S<span>™</span></div>
-    <ul class="nav-links">
-        <li><a href="#about">Về Châu</a></li>
-        <li><a href="#boss-framework">Framework</a></li>
-        <li><a href="#framework">Công Cụ</a></li>
-        <li><a href="#services">Dịch Vụ</a></li>
-        <li><a href="#cases">Case Studies</a></li>
-        <li><a href="#blog">Insights</a></li>
-        <li><a href="#contact">Liên Hệ</a></li>
-    </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <div class="hero-eyebrow">Fitness Growth System Consultant</div>
-        <h1 class="hero-headline">
-            Không phải huấn luyện viên rẽ hướng làm kinh doanh.<br>
-            <span class="gold">Tôi là tư vấn chiến lược chọn fitness làm lĩnh vực của mình.</span>
-        </h1>
-        <p class="hero-sub">5 năm làm việc trong ngành — đủ để biết hầu hết gym đang chạy bằng cảm tính, không phải hệ thống. BOSS Framework™ được xây để thay đổi điều đó.</p>
-        <div class="hero-cta">
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="btn-primary">Đặt Lịch Buổi Chẩn Đoán Đầu Tiên</a>
-            <a href="#boss-framework" class="btn-ghost">Tìm hiểu BOSS Framework</a>
-        </div>
-    </div>
-    <div class="hero-stats">
-        <div class="stat"><div class="stat-number">20</div><div class="stat-label">Câu hỏi chẩn đoán</div></div>
-        <div class="stat"><div class="stat-number">4</div><div class="stat-label">Giai đoạn phát triển</div></div>
-        <div class="stat"><div class="stat-number">5+</div><div class="stat-label">Năm kinh nghiệm</div></div>
-    </div>
-</section>
+        /* ─── SHARED ─── */
+        section { padding: 104px 64px; }
+        .eyebrow {
+            font-size: 10px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .rule {
+            width: 52px;
+            height: 3px;
+            background: var(--gold);
+            margin-bottom: 32px;
+        }
+        .sec-title {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1.18;
+            margin-bottom: 18px;
+        }
+        .sec-sub {
+            font-size: 16px;
+            color: var(--text-mid);
+            line-height: 1.75;
+            max-width: 540px;
+        }
+        .inner { max-width: 1160px; margin: 0 auto; }
 
 <!-- PAIN POINTS -->
 <section style="background:#F2EFE7;padding:72px 24px;">
@@ -299,6 +228,794 @@
   </div>
 </section>
 
+/* —— ABOUT —— */
+        .about { background: var(--white); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 88px;
+            align-items: center;
+        }
+        .about-quote {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1.55;
+            border-left: 4px solid var(--gold);
+            padding-left: 22px;
+            margin-bottom: 28px;
+        }
+        .about-text p {
+            font-size: 15px;
+            color: var(--text-mid);
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+        .about-text p strong { color: var(--navy); }
+        .boss-stack { display: flex; flex-direction: column; }
+        .boss-row {
+            display: grid;
+            grid-template-columns: 72px 1fr;
+            align-items: center;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+        .boss-row:last-child { border-bottom: none; }
+        .b-char {
+            font-size: 50px;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .b-content h3 {
+            font-size: 17px;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+        .b-content p { font-size: 13px; color: var(--text-mid); line-height: 1.55; }
+
+        /* ─── FRAMEWORK ─── */
+        .framework { background: var(--cream); }
+        .fw-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 56px;
+        }
+        .fw-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .fw-card {
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            padding: 36px 28px;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .fw-card:hover {
+            border-color: var(--navy);
+            box-shadow: 0 6px 24px rgba(30,58,95,0.07);
+        }
+        .fw-card.on {
+            border-top: 3px solid var(--navy);
+            border-color: var(--navy);
+        }
+        .fw-phase {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .fw-title {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+        .fw-desc {
+            font-size: 13px;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .fw-list { list-style: none; }
+        .fw-list li {
+            font-size: 13px;
+            color: var(--text-mid);
+            padding: 7px 0;
+            border-bottom: 1px solid var(--cream-dark);
+            display: flex;
+            gap: 10px;
+        }
+        .fw-list li:last-child { border-bottom: none; }
+        .fw-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+
+        /* ─── BOSS FRAMEWORK SECTION ─── */
+        .boss-fw { background: var(--cream); }
+        .bfw-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 56px;
+        }
+        .bfw-card {
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            padding: 36px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            transition: box-shadow .2s, border-color .2s;
+        }
+        .bfw-card:hover {
+            border-color: var(--navy);
+            box-shadow: 0 6px 24px rgba(30,58,95,0.07);
+        }
+        .bfw-num {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .bfw-stage {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 10px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--cream-dark);
+        }
+        .bfw-title {
+            font-size: 15px;
+            font-weight: 900;
+            color: var(--navy);
+            margin: 16px 0 10px;
+        }
+        .bfw-desc {
+            font-size: 13px;
+            color: var(--text-mid);
+            line-height: 1.75;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+        .bfw-signal {
+            background: var(--cream);
+            padding: 16px 18px;
+            margin-top: auto;
+        }
+        .bfw-signal-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--navy);
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+        .bfw-signal ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .bfw-signal ul li {
+            font-size: 12px;
+            color: var(--text-mid);
+            line-height: 1.5;
+            padding-left: 14px;
+            position: relative;
+        }
+        .bfw-signal ul li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 18px;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 960px) {
+            .bfw-cards { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .bfw-cards { grid-template-columns: 1fr; }
+        }
+
+        /* ─── AUDIT TRACKS ─── */
+        .audit-tracks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .audit-card {
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            border-top: 4px solid var(--cream-dark);
+            padding: 44px 40px;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .audit-card:hover {
+            border-color: var(--navy);
+            box-shadow: 0 8px 32px rgba(30,58,95,0.07);
+        }
+        .audit-card.featured {
+            border-color: var(--navy);
+            border-top: 4px solid var(--gold);
+        }
+        .audit-tag {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .audit-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 14px;
+        }
+        .audit-sub {
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.75;
+        }
+        .audit-body {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .audit-what-label {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--navy);
+            opacity: 0.5;
+            margin-bottom: 14px;
+        }
+        .audit-list { list-style: none; }
+        .audit-list li {
+            font-size: 13px;
+            color: var(--text-mid);
+            padding: 9px 0;
+            border-bottom: 1px solid var(--cream-dark);
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .audit-list li:last-child { border-bottom: none; }
+        .audit-list li strong { color: var(--navy); font-size: 13px; }
+        .audit-list li span { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+        .audit-card:not(.featured) .audit-list li {
+            flex-direction: row;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .audit-card:not(.featured) .audit-list li::before {
+            content: '→';
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .audit-cta {
+            display: block;
+            margin-top: 28px;
+            text-align: center;
+            padding: 14px 20px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid var(--navy);
+            color: var(--navy);
+            transition: .2s;
+        }
+        .audit-cta:hover { background: var(--navy); color: var(--white); }
+        .audit-cta-featured {
+            background: var(--navy);
+            color: var(--white);
+        }
+        .audit-cta-featured:hover { background: #2A4F7C; }
+
+        /* ─── ERRC ─── */
+        .errc-wrap {
+            margin-top: 40px;
+            border: 1px solid var(--cream-dark);
+            border-top: 4px solid var(--navy);
+            padding: 44px 40px;
+            background: var(--white);
+        }
+        .errc-header { margin-bottom: 36px; }
+        .errc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--cream-dark);
+        }
+        .errc-cell {
+            background: var(--white);
+            padding: 28px 24px;
+        }
+        .errc-label {
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+        .errc-cell.eliminate .errc-label { color: var(--navy); border-color: var(--navy); }
+        .errc-cell.reduce .errc-label { color: #B85C38; border-color: #B85C38; }
+        .errc-cell.raise .errc-label { color: #2E7D4F; border-color: #2E7D4F; }
+        .errc-cell.create .errc-label { color: var(--gold); border-color: var(--gold); }
+        .errc-desc {
+            font-size: 13px;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .errc-examples {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .errc-examples span {
+            font-size: 12px;
+            color: var(--text-mid);
+            background: var(--cream);
+            padding: 7px 12px;
+            line-height: 1.5;
+        }
+        .errc-note {
+            margin-top: 20px;
+            font-size: 11px;
+            color: var(--text-mid);
+            opacity: 0.6;
+            font-style: italic;
+        }
+
+        @media (max-width: 960px) {
+            .errc-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .errc-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ─── SERVICES ─── */
+        .services { background: var(--white); }
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 56px;
+        }
+        .svc-card {
+            background: var(--cream);
+            padding: 40px 36px;
+            border-top: 4px solid transparent;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .svc-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 8px 32px rgba(30,58,95,0.06);
+        }
+        .svc-card.feat {
+            background: var(--white);
+            border: 2px solid var(--navy);
+            border-top: 4px solid var(--navy);
+        }
+        .svc-card.feat:hover { box-shadow: 0 8px 32px rgba(30,58,95,0.1); }
+        .tier-tag {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+            display: block;
+        }
+        .svc-title {
+            font-size: 23px;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        .svc-desc {
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+        .svc-list { list-style: none; margin-bottom: 32px; }
+        .svc-list li {
+            font-size: 13px;
+            color: var(--text-mid);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--cream-dark);
+            display: flex;
+            gap: 10px;
+        }
+        .svc-list li:last-child { border-bottom: none; }
+        .svc-list li::before { content: '✓'; color: var(--gold); font-weight: 900; flex-shrink: 0; }
+        .svc-cta {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: .2s;
+        }
+        .svc-card:not(.feat) .svc-cta {
+            border: 2px solid var(--navy);
+            color: var(--navy);
+        }
+        .svc-card:not(.feat) .svc-cta:hover { background: var(--navy); color: var(--white); }
+        .svc-card.feat .svc-cta { background: var(--navy); color: var(--white); }
+        .svc-card.feat .svc-cta:hover { background: #2A4F7C; }
+
+        /* ─── CASES ─── */
+        .cases { background: var(--cream); }
+        .cases-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 24px;
+            margin-top: 56px;
+        }
+        .case-card { padding: 48px; position: relative; }
+        .case-card.feat {
+            background: var(--white);
+            border: 2px solid var(--navy);
+            border-left: 6px solid var(--navy);
+        }
+        .case-card.side {
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .case-badge {
+            display: inline-block;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            margin-bottom: 24px;
+        }
+        .case-card.feat .case-badge { background: var(--cream); color: var(--navy); border: 1px solid var(--cream-dark); }
+        .case-card.side .case-badge { background: var(--cream); color: var(--text-mid); border: 1px solid var(--cream-dark); }
+        .case-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        .case-meta {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .case-card.side .case-meta { color: var(--text-mid); }
+        .case-desc { font-size: 15px; color: var(--text-mid); line-height: 1.8; }
+        .findings { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+        .finding { display: flex; gap: 14px; align-items: flex-start; }
+        .f-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+        .f-text { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+        /* ─── BLOG ─── */
+        .blog { background: var(--white); }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 56px;
+        }
+        .blog-card {
+            background: var(--cream);
+            padding: 36px;
+            border-top: 3px solid transparent;
+            transition: border-color .2s, box-shadow .2s;
+            cursor: pointer;
+        }
+        .blog-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 8px 32px rgba(30,58,95,0.06);
+        }
+        .blog-series {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .blog-title {
+            font-size: 19px;
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1.38;
+            margin-bottom: 14px;
+        }
+        .blog-excerpt { font-size: 13px; color: var(--text-mid); line-height: 1.75; margin-bottom: 24px; }
+        .blog-tag {
+            display: inline-block;
+            font-size: 10px;
+            letter-spacing: 2px;
+            padding: 5px 12px;
+            border: 1px solid var(--cream-dark);
+            color: var(--navy);
+            text-transform: uppercase;
+            background: var(--white);
+        }
+
+        /* ─── CAT BOXES ─── */
+        .cat-boxes { display: flex; flex-direction: column; gap: 32px; margin-top: 48px; }
+        .cat-box {
+            border: 1px solid var(--cream-dark);
+            border-top: 3px solid var(--navy);
+            background: var(--white);
+            padding: 36px 40px;
+        }
+        .cat-box-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+        .cat-count {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            white-space: nowrap;
+            margin-top: 4px;
+        }
+        .cat-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .cat-hidden { display: none; margin-top: 16px; }
+        .cat-more {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--navy);
+            padding: 0;
+            transition: opacity .2s;
+        }
+        .cat-more:hover { opacity: 0.6; }
+        .chevron-icon { width: 14px; height: 14px; transition: transform .2s; }
+        .chevron-icon.open { transform: rotate(180deg); }
+
+        /* ─── ANON CARD ─── */
+        .anon-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-top: 36px;
+            background: var(--navy);
+            border: 1px solid rgba(201,168,76,0.4);
+            padding: 24px 28px;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .anon-icon { width: 22px; height: 22px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+        .anon-title {
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .anon-body {
+            font-size: 13px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 960px) {
+            .cat-cards { grid-template-columns: 1fr; }
+            .cat-box { padding: 28px 24px; }
+            .anon-card { flex-direction: column; }
+        }
+
+        /* ─── BLOG CARD (keep) ─── */
+        .cat-label { font-size: 18px; font-weight: 900; color: var(--navy); }
+        .cat-desc { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-top: 4px; }
+        .blog-card.placeholder { opacity: 0.5; cursor: default; }
+        .blog-card.placeholder:hover { box-shadow: none; border-color: transparent; }
+        .blog-tag.coming { background: transparent; border: 1px dashed var(--cream-dark); color: var(--text-mid); }
+
+        /* ─── ICONS ─── */
+        .bfw-icon, .svc-icon, .btn-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+            stroke-width: 1.5;
+        }
+        .bfw-icon { width: 26px; height: 26px; color: var(--gold); }
+        .svc-icon { width: 24px; height: 24px; color: var(--gold); }
+        .btn-icon { width: 20px; height: 20px; }
+        .audit-icon { width: 26px; height: 26px; color: var(--gold); display: inline-block; vertical-align: middle; margin-right: 8px; stroke-width: 1.5; }
+        .anon-note {
+            margin-top: 28px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .anon-icon { width: 15px; height: 15px; flex-shrink: 0; color: var(--gold); }
+
+        /* ─── CONTACT ─── */
+        .contact { background: var(--cream); text-align: center; }
+        .contact .rule { margin: 0 auto 36px; }
+        .contact .sec-title { max-width: 680px; margin: 0 auto 18px; }
+        .contact .sec-sub { margin: 0 auto 52px; text-align: center; }
+        .contact-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .c-btn {
+            padding: 18px 44px;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: .2s;
+            display: inline-block;
+        }
+        .c-btn.navy-btn { background: var(--navy); color: var(--white); }
+        .c-btn.navy-btn:hover { background: #2A4F7C; }
+        .c-btn.outline-btn { border: 2px solid var(--navy); color: var(--navy); }
+        .c-btn.outline-btn:hover { background: var(--navy); color: var(--white); }
+        .contact-note {
+            margin-top: 44px;
+            font-size: 12px;
+            color: var(--text-mid);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--white);
+            border-top: 1px solid var(--cream-dark);
+            padding: 40px 64px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .f-logo { font-size: 15px; font-weight: 900; color: var(--navy); letter-spacing: 3px; }
+        .f-nav { display: flex; gap: 24px; flex-wrap: wrap; }
+        .f-nav a {
+            font-size: 12px;
+            color: var(--text-mid);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color .2s;
+        }
+        .f-nav a:hover { color: var(--navy); }
+        .f-contact { display: flex; gap: 16px; }
+        .f-contact a {
+            font-size: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: opacity .2s;
+        }
+        .f-contact a:hover { opacity: 0.7; }
+        .f-copy { font-size: 11px; color: var(--text-mid); }
+
+        @media (max-width: 960px) {
+            footer { flex-direction: column; gap: 20px; text-align: center; padding: 36px 24px; }
+            .f-nav { justify-content: center; }
+            .f-contact { justify-content: center; }
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 960px) {
+            nav { padding: 16px 24px; }
+            .nav-links { display: none; }
+            section { padding: 72px 24px; }
+            .hero { padding: 100px 24px 100px; }
+            .hero-headline { font-size: 38px; }
+            .hero-stats { position: static; margin-top: 52px; justify-content: flex-start; }
+            .about-grid,
+            .fw-cards,
+            .audit-tracks,
+            .svc-grid,
+            .cases-grid,
+            .blog-grid { grid-template-columns: 1fr; }
+            .fw-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+            footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 24px; }
+        }
+    </style>
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-logo">B.O.S.S<span>™</span></div>
+    <ul class="nav-links">
+        <li><a href="#about">Về Châu</a></li>
+        <li><a href="#boss-framework">Framework</a></li>
+        <li><a href="#framework">Công Cụ</a></li>
+        <li><a href="#services">Dịch Vụ</a></li>
+        <li><a href="#cases">Case Studies</a></li>
+        <li><a href="#blog">Insights</a></li>
+        <li><a href="#contact">Liên Hệ</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-eyebrow">Fitness Growth System Consultant</div>
+        <h1 class="hero-headline">
+            Không phải huấn luyện viên rẽ hướng làm kinh doanh.<br>
+            <span class="gold">Tôi là tư vấn chiến lược chọn fitness làm lĩnh vực của mình.</span>
+        </h1>
+        <p class="hero-sub">
+            5 năm làm việc trong ngành — đủ để biết hầu hết gym đang chạy bằng cảm tính, không phải hệ thống. BOSS Framework™ được xây để thay đổi điều đó.
+        </p>
+        <div class="hero-cta">
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="btn-primary">Đặt Lịch Buổi Chẩn Đoán Đầu Tiên</a>
+            <a href="#boss-framework" class="btn-ghost">Tìm hiểu BOSS Framework</a>
+        </div>
+    </div>
+    <div class="hero-stats">
+        <div class="stat">
+            <div class="stat-number">20</div>
+            <div class="stat-label">Câu hỏi chẩn đoán</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Giai đoạn phát triển</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Năm kinh nghiệm</div>
+        </div>
+    </div>
+</section>
+
 <!-- ABOUT -->
 <section class="about" id="about">
     <div class="inner">
@@ -312,10 +1029,34 @@
                 <p>Câu hỏi tôi thường đặt cho chủ studio: <strong>"Nếu bạn biến mất 1–2 tuần, studio có vẫn chạy được không?"</strong></p>
             </div>
             <div class="boss-stack">
-                <div class="boss-row"><div class="b-char">B</div><div class="b-content"><h3>BUILD</h3><p>Xây nền đúng — chân dung khách hàng rõ, sản phẩm phù hợp, onboarding có cấu trúc</p></div></div>
-                <div class="boss-row"><div class="b-char">O</div><div class="b-content"><h3>OPTIMIZE</h3><p>Tối ưu vận hành — ngôn ngữ giao tiếp chuẩn, lộ trình khách hàng không rò rỉ</p></div></div>
-                <div class="boss-row"><div class="b-char">S</div><div class="b-content"><h3>SCALE</h3><p>Chuẩn hoá quy trình để nhân bản — không phụ thuộc vào một người</p></div></div>
-                <div class="boss-row"><div class="b-char">S</div><div class="b-content"><h3>SUSTAIN</h3><p>Bền vững dài hạn — khách ở lại, đội ngũ không kiệt sức, doanh thu có thể dự đoán</p></div></div>
+                <div class="boss-row">
+                    <div class="b-char">B</div>
+                    <div class="b-content">
+                        <h3>BUILD</h3>
+                        <p>Xây nền đúng — chân dung khách hàng rõ, sản phẩm phù hợp, onboarding có cấu trúc</p>
+                    </div>
+                </div>
+                <div class="boss-row">
+                    <div class="b-char">O</div>
+                    <div class="b-content">
+                        <h3>OPTIMIZE</h3>
+                        <p>Tối ưu vận hành — ngôn ngữ giao tiếp chuẩn, lộ trình khách hàng không rò rỉ</p>
+                    </div>
+                </div>
+                <div class="boss-row">
+                    <div class="b-char">S</div>
+                    <div class="b-content">
+                        <h3>SCALE</h3>
+                        <p>Chuẩn hoá quy trình để nhân bản — không phụ thuộc vào một người</p>
+                    </div>
+                </div>
+                <div class="boss-row">
+                    <div class="b-char">S</div>
+                    <div class="b-content">
+                        <h3>SUSTAIN</h3>
+                        <p>Bền vững dài hạn — khách ở lại, đội ngũ không kiệt sức, doanh thu có thể dự đoán</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -327,35 +1068,63 @@
         <div class="eyebrow">B.O.S.S Framework™</div>
         <div class="rule"></div>
         <h2 class="sec-title">Bốn Giai Đoạn Phát Triển<br>Doanh Nghiệp Fitness</h2>
-        <p class="sec-sub">Hầu hết studio thất bại không vì thiếu khách — mà vì nhảy thẳng vào nhân rộng, thêm chi nhánh trước khi khai thác đúng khách hàng lý tưởng, ổn định bộ máy vận hành và nhân sự được trang bị đầy đủ kỹ năng. BOSS Framework ra đời giúp xác định đúng vấn đề thực sự — không phải triệu chứng — đúng việc cần làm và thứ tự cần giải quyết.</p>
+        <p class="sec-sub">Hầu hết studio thất bại không vì thiếu khách — mà vì nhảy thẳng vào nhân rộng, thêm chi nhánh trước khi khai thác đúng khách hàng lý tưởng, ổn định bộ máy vận hành và nhân sự được trang bị đầy đủ kỹ năng. Các chủ doanh nghiệp luôn phải có mặt để quản lý và xử lý phát sinh. Càng làm, càng mở rộng, càng RỐI. BOSS Framework ra đời giúp xác định đúng vấn đề thực sự — không phải triệu chứng — đúng việc cần làm và thứ tự cần giải quyết.</p>
         <div class="bfw-cards">
             <div class="bfw-card">
                 <div class="bfw-num">01</div>
                 <div class="bfw-stage">BUILD</div>
                 <h3 class="bfw-title"><i data-lucide="layers" class="bfw-icon"></i> Xây Nền Đúng</h3>
                 <p class="bfw-desc">Không thể tối ưu thứ được xây sai từ đầu. Giai đoạn này xác định ai là khách hàng thật sự, sản phẩm phù hợp với họ ra sao, và onboarding có đủ tạo ra trải nghiệm đầu tiên tốt không.</p>
-                <div class="bfw-signal"><div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div><ul><li>Khách đến nhưng tỷ lệ ở lại thấp</li><li>Marketing chạy nhưng không ra đúng người</li><li>Chủ vẫn đang làm mọi thứ một mình</li></ul></div>
+                <div class="bfw-signal">
+                    <div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div>
+                    <ul>
+                        <li>Khách đến nhưng tỷ lệ ở lại thấp</li>
+                        <li>Marketing chạy nhưng không ra đúng người</li>
+                        <li>Chủ vẫn đang làm mọi thứ một mình</li>
+                    </ul>
+                </div>
             </div>
             <div class="bfw-card">
                 <div class="bfw-num">02</div>
                 <div class="bfw-stage">OPTIMIZE</div>
                 <h3 class="bfw-title"><i data-lucide="settings-2" class="bfw-icon"></i> Tối Ưu Vận Hành</h3>
                 <p class="bfw-desc">Giai đoạn này không thêm mới — mà làm đúng và nhất quán hơn những gì đã có. Ngôn ngữ giao tiếp được chuẩn hoá, lộ trình khách hàng không còn rò rỉ, vận hành được đo bằng số.</p>
-                <div class="bfw-signal"><div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div><ul><li>Mỗi HLV nói mỗi kiểu, không nhất quán</li><li>Không biết khách bỏ đi vì lý do gì</li><li>Doanh thu phụ thuộc vào tháng cao điểm</li></ul></div>
+                <div class="bfw-signal">
+                    <div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div>
+                    <ul>
+                        <li>Mỗi HLV nói mỗi kiểu, không nhất quán</li>
+                        <li>Không biết khách bỏ đi vì lý do gì</li>
+                        <li>Doanh thu phụ thuộc vào tháng cao điểm</li>
+                    </ul>
+                </div>
             </div>
             <div class="bfw-card">
                 <div class="bfw-num">03</div>
                 <div class="bfw-stage">SCALE</div>
                 <h3 class="bfw-title"><i data-lucide="trending-up" class="bfw-icon"></i> Chuẩn Hoá Để Nhân Bản</h3>
                 <p class="bfw-desc">Mở chi nhánh thứ hai mà mang theo vấn đề của chi nhánh đầu — đó không phải Scale, đó là nhân đôi rủi ro. Giai đoạn này xây SOP, đào tạo đội ngũ tự vận hành và localize từng khu vực.</p>
-                <div class="bfw-signal"><div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div><ul><li>Chủ phải có mặt mọi thứ mới chạy được</li><li>Nhân viên mới mất rất lâu để làm được việc</li><li>Đang muốn mở thêm nhưng chưa dám</li></ul></div>
+                <div class="bfw-signal">
+                    <div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div>
+                    <ul>
+                        <li>Chủ phải có mặt mọi thứ mới chạy được</li>
+                        <li>Nhân viên mới mất rất lâu để làm được việc</li>
+                        <li>Đang muốn mở thêm nhưng chưa dám</li>
+                    </ul>
+                </div>
             </div>
             <div class="bfw-card">
                 <div class="bfw-num">04</div>
                 <div class="bfw-stage">SUSTAIN</div>
                 <h3 class="bfw-title"><i data-lucide="repeat-2" class="bfw-icon"></i> Bền Vững Dài Hạn</h3>
                 <p class="bfw-desc">Bền vững không phải là đích đến — là nền tảng để tăng trưởng tiếp. Khách ở lại vì trải nghiệm tốt liên tục, không phải vì khuyến mãi. Đội ngũ không kiệt sức. Doanh thu có thể dự đoán.</p>
-                <div class="bfw-signal"><div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div><ul><li>Renewal đang xử lý thủ công, không có quy trình</li><li>Khách ở lại phụ thuộc vào HLV, không phải studio</li><li>Chủ cảm thấy kiệt sức dù doanh thu ổn</li></ul></div>
+                <div class="bfw-signal">
+                    <div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div>
+                    <ul>
+                        <li>Renewal đang xử lý thủ công, không có quy trình</li>
+                        <li>Khách ở lại phụ thuộc vào HLV, không phải studio</li>
+                        <li>Chủ cảm thấy kiệt sức dù doanh thu ổn</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -373,41 +1142,121 @@
             </div>
         </div>
         <div class="audit-tracks">
+
+            <!-- SELF-AUDIT -->
             <div class="audit-card">
-                <div class="audit-tag">Studio Đơn · Tier 1 & 2</div>
-                <h3 class="audit-title"><i data-lucide="clipboard-list" class="audit-icon"></i> BOSS Self-Audit</h3>
-                <p class="audit-sub">Dành cho studio đang vận hành một cơ sở — dù quy mô nhỏ hay đã có đội ngũ đông. 20 câu hỏi chẩn đoán toàn diện theo 4 giai đoạn Build · Optimize · Scale · Sustain.</p>
+                <div class="audit-header">
+                    <div class="audit-tag">Studio Đơn · Tier 1 & 2</div>
+                    <h3 class="audit-title"><i data-lucide="clipboard-list" class="audit-icon"></i> BOSS Self-Audit</h3>
+                    <p class="audit-sub">Dành cho studio đang vận hành một cơ sở — dù quy mô nhỏ hay đã có đội ngũ đông. 20 câu hỏi chẩn đoán toàn diện theo 4 giai đoạn Build · Optimize · Scale · Sustain.</p>
+                </div>
                 <div class="audit-body">
-                    <div><div class="audit-what-label">Chẩn đoán được gì</div><ul class="audit-list"><li>Chân dung khách hàng có thật sự rõ chưa</li><li>Vận hành đang phụ thuộc vào ai</li><li>Churn đang xảy ra ở đâu trong hành trình khách</li><li>Studio đang ở giai đoạn nào trong BOSS Framework</li></ul></div>
-                    <div><div class="audit-what-label">Đầu ra</div><ul class="audit-list"><li>Báo cáo Phase 1 với phát hiện + ưu tiên xử lý</li><li>Lộ trình Phase 2 dựa trên dữ liệu thật</li></ul></div>
+                    <div class="audit-what">
+                        <div class="audit-what-label">Chẩn đoán được gì</div>
+                        <ul class="audit-list">
+                            <li>Chân dung khách hàng có thật sự rõ chưa</li>
+                            <li>Vận hành đang phụ thuộc vào ai</li>
+                            <li>Churn đang xảy ra ở đâu trong hành trình khách</li>
+                            <li>Studio đang ở giai đoạn nào trong BOSS Framework</li>
+                        </ul>
+                    </div>
+                    <div class="audit-output">
+                        <div class="audit-what-label">Đầu ra</div>
+                        <ul class="audit-list">
+                            <li>Báo cáo Phase 1 với phát hiện + ưu tiên xử lý</li>
+                            <li>Lộ trình Phase 2 dựa trên dữ liệu thật</li>
+                        </ul>
+                    </div>
                 </div>
                 <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="audit-cta">Tôi Đang Ở Tier 1 hoặc 2 — Bắt Đầu Audit</a>
             </div>
+
+            <!-- CHAIN-AUDIT -->
             <div class="audit-card featured">
-                <div class="audit-tag">Chuỗi 2+ Chi Nhánh · Tier 3</div>
-                <h3 class="audit-title"><i data-lucide="git-branch" class="audit-icon"></i> BOSS Chain-Audit</h3>
-                <p class="audit-sub">Dành cho chủ chuỗi đang vận hành nhiều cơ sở. Chẩn đoán từng chi nhánh lẫn sự nhất quán toàn hệ thống — không gộp chung.</p>
+                <div class="audit-header">
+                    <div class="audit-tag">Chuỗi 2+ Chi Nhánh · Tier 3</div>
+                    <h3 class="audit-title"><i data-lucide="git-branch" class="audit-icon"></i> BOSS Chain-Audit</h3>
+                    <p class="audit-sub">Dành cho chủ chuỗi đang vận hành nhiều cơ sở. Chẩn đoán từng chi nhánh lẫn sự nhất quán toàn hệ thống — không gộp chung.</p>
+                </div>
                 <div class="audit-body">
-                    <div><div class="audit-what-label">Bộ công cụ đi kèm</div><ul class="audit-list"><li><strong>Location Avatar Mapping</strong><span>Phân tích chân dung khách hàng theo từng khu vực</span></li><li><strong>Location Assessment (4 Lenses)</strong><span>Đánh giá từng chi nhánh qua 4 góc nhìn: Vận hành · Khách hàng · Đội ngũ · Thị trường</span></li><li><strong>Location Scenario Guide</strong><span>6 kịch bản mở rộng — từ chi nhánh đang yếu đến chi nhánh sắp nhân bản</span></li></ul></div>
-                    <div><div class="audit-what-label">Đầu ra</div><ul class="audit-list"><li>Scorecard từng chi nhánh + điểm tổng hệ thống</li><li>Ưu tiên xử lý theo từng cơ sở, không đồng đều</li></ul></div>
+                    <div class="audit-what">
+                        <div class="audit-what-label">Bộ công cụ đi kèm</div>
+                        <ul class="audit-list">
+                            <li>
+                                <strong>Location Avatar Mapping</strong>
+                                <span>Phân tích chân dung khách hàng theo từng khu vực — không áp chung một avatar cho toàn chuỗi</span>
+                            </li>
+                            <li>
+                                <strong>Location Assessment (4 Lenses)</strong>
+                                <span>Đánh giá từng chi nhánh qua 4 góc nhìn: Vận hành · Khách hàng · Đội ngũ · Thị trường</span>
+                            </li>
+                            <li>
+                                <strong>Location Scenario Guide</strong>
+                                <span>6 kịch bản mở rộng — từ chi nhánh đang yếu đến chi nhánh sắp nhân bản</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="audit-output">
+                        <div class="audit-what-label">Đầu ra</div>
+                        <ul class="audit-list">
+                            <li>Scorecard từng chi nhánh + điểm tổng hệ thống</li>
+                            <li>Ưu tiên xử lý theo từng cơ sở, không đồng đều</li>
+                        </ul>
+                    </div>
                 </div>
                 <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="audit-cta audit-cta-featured">Tôi Đang Vận Hành Chuỗi — Bắt Đầu Chain-Audit</a>
             </div>
+
         </div>
+
+        <!-- ERRC -->
         <div class="errc-wrap">
             <div class="errc-header">
                 <div class="audit-tag">BOSS Khác Biệt Như Thế Nào</div>
                 <h3 class="audit-title">ERRC — Vị Trí Của BOSS</h3>
-                <p class="audit-sub">So với agency marketing hay consultant thông thường, BOSS chọn một cuộc chơi khác.</p>
+                <p class="audit-sub">So với agency marketing hay consultant thông thường, BOSS chọn một cuộc chơi khác — không cạnh tranh trên cùng tiêu chí, mà định nghĩa lại tiêu chí đó.</p>
             </div>
             <div class="errc-grid">
-                <div class="errc-cell eliminate"><div class="errc-label">Loại Bỏ</div><div class="errc-desc">Những gì agency thông thường hay làm nhưng BOSS không làm</div><div class="errc-examples"><span>Báo cáo đẹp nhưng không triển khai được</span><span>Tư vấn chung chung, không có dữ liệu từ chính studio</span><span>Giải pháp copy từ mô hình nước ngoài</span></div></div>
-                <div class="errc-cell reduce"><div class="errc-label">Giảm Bớt</div><div class="errc-desc">Những yếu tố BOSS chủ động thu hẹp so với thị trường</div><div class="errc-examples"><span>Số lượng client — ưu tiên chiều sâu hơn chiều rộng</span><span>Phụ thuộc vào consultant sau khi kết thúc engagement</span><span>Thời gian từ chẩn đoán đến có kết quả đầu tiên</span></div></div>
-                <div class="errc-cell raise"><div class="errc-label">Nâng Cao</div><div class="errc-desc">Những điểm BOSS đầu tư vượt mức trung bình của ngành tư vấn</div><div class="errc-examples"><span>Chẩn đoán bằng dữ liệu thật trước khi đề xuất giải pháp</span><span>Deliverable dùng được ngay — không cần dịch hay adapt thêm</span><span>Hiểu ngành từ bên trong — không học từ sách hay case nước ngoài</span></div></div>
-                <div class="errc-cell create"><div class="errc-label">Tạo Mới</div><div class="errc-desc">Những giá trị không có ở agency hay consultant thông thường</div><div class="errc-examples"><span>Hệ thống IP riêng — BOSS Framework với công cụ chẩn đoán độc lập</span><span>Studio tự vận hành được khi consultant rời đi</span><span>SOP + Sales Kit theo kịch bản thực tế của từng studio</span></div></div>
+                <div class="errc-cell eliminate">
+                    <div class="errc-label">Loại Bỏ</div>
+                    <div class="errc-desc">Những gì agency thông thường hay làm nhưng BOSS không làm</div>
+                    <div class="errc-examples">
+                        <span>Báo cáo đẹp nhưng không triển khai được</span>
+                        <span>Tư vấn chung chung, không có dữ liệu từ chính studio</span>
+                        <span>Giải pháp copy từ mô hình nước ngoài</span>
+                    </div>
+                </div>
+                <div class="errc-cell reduce">
+                    <div class="errc-label">Giảm Bớt</div>
+                    <div class="errc-desc">Những yếu tố BOSS chủ động thu hẹp so với thị trường</div>
+                    <div class="errc-examples">
+                        <span>Số lượng client — ưu tiên chiều sâu hơn chiều rộng</span>
+                        <span>Phụ thuộc vào consultant sau khi kết thúc engagement</span>
+                        <span>Thời gian từ chẩn đoán đến có kết quả đầu tiên</span>
+                    </div>
+                </div>
+                <div class="errc-cell raise">
+                    <div class="errc-label">Nâng Cao</div>
+                    <div class="errc-desc">Những điểm BOSS đầu tư vượt mức trung bình của ngành tư vấn</div>
+                    <div class="errc-examples">
+                        <span>Chẩn đoán bằng dữ liệu thật trước khi đề xuất giải pháp</span>
+                        <span>Deliverable dùng được ngay — không cần dịch hay adapt thêm</span>
+                        <span>Hiểu ngành từ bên trong — không học từ sách hay case nước ngoài</span>
+                    </div>
+                </div>
+                <div class="errc-cell create">
+                    <div class="errc-label">Tạo Mới</div>
+                    <div class="errc-desc">Những giá trị không có ở agency hay consultant thông thường</div>
+                    <div class="errc-examples">
+                        <span>Hệ thống IP riêng — BOSS Framework với công cụ chẩn đoán độc lập</span>
+                        <span>Studio tự vận hành được khi consultant rời đi</span>
+                        <span>SOP + Sales Kit theo kịch bản thực tế của từng studio</span>
+                    </div>
+                </div>
             </div>
-            <div class="errc-note">ERRC là một trong những công cụ BOSS dùng để giúp studio xác định vị trí cạnh tranh.</div>
+            <div class="errc-note">ERRC là một trong những công cụ BOSS dùng để giúp studio xác định vị trí cạnh tranh — không bắt chước đối thủ, mà chọn cuộc chơi khác.</div>
         </div>
+
     </div>
 </section>
 
@@ -423,21 +1272,37 @@
                 <span class="tier-tag">Phase 1</span>
                 <h3 class="svc-title"><i data-lucide="search" class="svc-icon"></i> Chẩn Đoán</h3>
                 <p class="svc-desc">Chẩn đoán toàn diện. Tìm nút thắt thật sự — không phải triệu chứng bề mặt.</p>
-                <ul class="svc-list"><li>BOSS Self-Audit (20 câu hỏi chẩn đoán)</li><li>Phỏng vấn sâu 1–2 buổi với chủ studio</li><li>Phân tích theo 4 giai đoạn BOSS</li><li>Báo cáo Phase 1 với phát hiện + ưu tiên</li></ul>
+                <ul class="svc-list">
+                    <li>BOSS Self-Audit (20 câu hỏi chẩn đoán)</li>
+                    <li>Phỏng vấn sâu 1–2 buổi với chủ studio</li>
+                    <li>Phân tích theo 4 giai đoạn BOSS</li>
+                    <li>Báo cáo Phase 1 với phát hiện + ưu tiên</li>
+                </ul>
                 <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="svc-cta">Đặt Lịch Buổi Đầu Tiên</a>
             </div>
             <div class="svc-card feat">
                 <span class="tier-tag">Phase 2</span>
                 <h3 class="svc-title"><i data-lucide="wrench" class="svc-icon"></i> Triển Khai</h3>
                 <p class="svc-desc">Xây và tối ưu hệ thống dựa trên phát hiện từ Phase 1. Có lộ trình rõ, có đầu ra đo lường được.</p>
-                <ul class="svc-list"><li>Sales Kit phù hợp từng kịch bản thực tế</li><li>SOP cho từng vị trí trong studio</li><li>Hệ thống tracking vận hành</li><li>Chiến lược định vị và marketing đúng avatar</li><li>Đào tạo đội ngũ triển khai</li></ul>
+                <ul class="svc-list">
+                    <li>Sales Kit phù hợp từng kịch bản thực tế</li>
+                    <li>SOP cho từng vị trí trong studio</li>
+                    <li>Hệ thống tracking vận hành</li>
+                    <li>Chiến lược định vị và marketing đúng avatar</li>
+                    <li>Đào tạo đội ngũ triển khai</li>
+                </ul>
                 <a href="#contact" class="svc-cta">Liên Hệ Tư Vấn</a>
             </div>
             <div class="svc-card">
                 <span class="tier-tag">Phase 3</span>
                 <h3 class="svc-title"><i data-lucide="users" class="svc-icon"></i> Đồng Hành</h3>
                 <p class="svc-desc">Đồng hành theo tháng sau Phase 2. Điều chỉnh theo dữ liệu thực, không để hệ thống bị bỏ rơi.</p>
-                <ul class="svc-list"><li>Review định kỳ kết quả vận hành</li><li>Hỗ trợ khi phát sinh vấn đề mới</li><li>Cập nhật SOP theo thực tế</li><li>Tư vấn chiến lược theo giai đoạn</li></ul>
+                <ul class="svc-list">
+                    <li>Review định kỳ kết quả vận hành</li>
+                    <li>Hỗ trợ khi phát sinh vấn đề mới</li>
+                    <li>Cập nhật SOP theo thực tế</li>
+                    <li>Tư vấn chiến lược theo giai đoạn</li>
+                </ul>
                 <a href="#contact" class="svc-cta">Tìm Hiểu Thêm</a>
             </div>
         </div>
@@ -452,8 +1317,18 @@
         <h2 class="sec-title">Doanh Nghiệp Đang Làm Việc</h2>
         <p class="sec-sub">Số liệu thật. Vấn đề thật. Không có case study phát minh.</p>
         <div class="cases-grid">
-            <div class="case-card feat"><span class="case-badge">● Đang Cập Nhật</span><h3 class="case-title">Studio A</h3><div class="case-meta">Tier 1 · Studio Đơn</div><p class="case-desc">Case study đang trong quá trình triển khai. Kết quả và phát hiện sẽ được công bố sau khi Phase 2 hoàn thành.</p></div>
-            <div class="case-card side"><span class="case-badge">Đang Cập Nhật</span><h3 class="case-title">Studio B</h3><div class="case-meta">Tier 3 · Chuỗi Nhiều Chi Nhánh</div><p class="case-desc">Case study đang trong quá trình triển khai. Kết quả và phát hiện sẽ được công bố sau khi Phase 1 hoàn thành.</p></div>
+            <div class="case-card feat">
+                <span class="case-badge">● Đang Cập Nhật</span>
+                <h3 class="case-title">Studio A</h3>
+                <div class="case-meta">Tier 1 · Studio Đơn</div>
+                <p class="case-desc">Case study đang trong quá trình triển khai. Kết quả và phát hiện sẽ được công bố sau khi Phase 2 hoàn thành.</p>
+            </div>
+            <div class="case-card side">
+                <span class="case-badge">Đang Cập Nhật</span>
+                <h3 class="case-title">Studio B</h3>
+                <div class="case-meta">Tier 3 · Chuỗi Nhiều Chi Nhánh</div>
+                <p class="case-desc">Case study đang trong quá trình triển khai. Kết quả và phát hiện sẽ được công bố sau khi Phase 1 hoàn thành.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -464,7 +1339,8 @@
         <div class="eyebrow">Insights</div>
         <div class="rule"></div>
         <h2 class="sec-title">Góc Nhìn Từ Thực Chiến</h2>
-        <div id="insights-posts"></div>
+        
+            <div id="insights-posts"></div>
     </div>
 </section>
 
@@ -512,7 +1388,24 @@
 </footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() { lucide.createIcons(); });
+    document.addEventListener('DOMContentLoaded', function() {
+        lucide.createIcons();
+    });
+
+    function toggleCat(id, btn) {
+        const el = document.getElementById(id);
+        const icon = btn.querySelector('.chevron-icon');
+        if (el.style.display === 'grid') {
+            el.style.display = 'none';
+            icon.classList.remove('open');
+            btn.innerHTML = btn.innerHTML.replace('Thu gọn', 'Xem thêm');
+        } else {
+            el.style.display = 'grid';
+            icon.classList.add('open');
+            btn.innerHTML = btn.innerHTML.replace('Xem thêm', 'Thu gọn');
+        }
+        lucide.createIcons();
+    }
 </script>
 <script>
 const CATEGORY_LABELS = {
@@ -571,6 +1464,5 @@ if (window.netlifyIdentity) {
 }
 
 document.addEventListener("DOMContentLoaded", loadInsightsPosts);
-</script>
-</body>
+</script></body>
 </html>
