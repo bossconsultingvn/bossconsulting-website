@@ -1,6 +1,6 @@
 ---
 title: Sales nói đúng tâm lý nhưng vẫn rớt deal
-category: chien-luoc
+category: skills
 excerpt: Dù kỹ thuật sales đúng nhưng sai trình tự tâm lý
 date: 2026-06-24
 ---
