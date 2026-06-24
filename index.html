@@ -190,8 +190,8 @@
         .trust-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; border-top: 1px solid var(--cream-dark); border-bottom: 1px solid var(--cream-dark); }
         .trust-item { padding: 32px 28px; display: flex; align-items: flex-start; gap: 14px; }
         .trust-item + .trust-item { border-left: 1px solid var(--cream-dark); }
-        .trust-icon { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
-        .trust-title { font-size: var(--t-small); font-weight: 900; color: var(--navy); margin-bottom: 5px; }
+        .trust-icon { width: 18px; height: 18px; color: var(--gold); display: block; margin-bottom: 10px; }
+        .trust-title { font-size: var(--t-small); font-weight: 900; color: var(--navy); margin-bottom: 6px; display: block; }
         .trust-body { font-size: var(--t-small); color: var(--text-mid); line-height: 1.7; }
 
         .bfw-icon, .svc-icon, .btn-icon { display: inline-block; vertical-align: middle; margin-right: 8px; stroke-width: 1.5; }
@@ -225,16 +225,15 @@
         .pain-points { background: var(--cream); }
         .pain-points .eyebrow { color: var(--gold); }
         .pain-points .rule { background: var(--gold); }
-        .pain-points .sec-title { color: var(--navy); margin-bottom: 48px; }
-        .pp-list { list-style: none; margin-bottom: 56px; max-width: 680px; }
-        .pp-item { display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--cream-dark); }
+        .pain-points .sec-title { color: var(--navy); margin-bottom: 48px; font-size: var(--t-card); }
+        .pp-wrap { max-width: 680px; }
+        .pp-list { list-style: none; margin-bottom: 48px; }
+        .pp-item { display: flex; align-items: center; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--cream-dark); }
         .pp-item:first-child { border-top: 1px solid var(--cream-dark); }
         .pp-check { color: var(--gold); font-size: 18px; font-weight: 900; flex-shrink: 0; }
         .pp-text { font-size: var(--t-body); color: var(--navy); line-height: 1.5; font-weight: 700; }
-        .pp-tagline { font-size: var(--t-body); color: var(--text-mid); font-style: italic; margin-bottom: 32px; }
+        .pp-tagline { font-size: var(--t-body); color: var(--navy); font-style: italic; font-weight: 700; line-height: 1.4; margin-bottom: 36px; }
         .pp-cta { }
-        .pp-tagline { font-size: var(--t-body); color: var(--text-mid); font-style: italic; margin-bottom: 32px; }
-        .pp-cta { text-align: center; }
 
         @media (max-width: 960px) {
             .pp-grid { grid-template-columns: 1fr; }
@@ -296,7 +295,8 @@
     <div class="inner">
         <div class="eyebrow">Nhận Diện Vấn Đề</div>
         <div class="rule"></div>
-        <h2 class="sec-title">Bạn có đang gặp<br>tình trạng này?</h2>
+        <h2 class="sec-title">Bạn có đang gặp tình trạng này?</h2>
+        <div class="pp-wrap">
         <ul class="pp-list">
             <li class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Chủ vắng mặt là sợ studio rối tung.</span></li>
             <li class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Khách đăng ký xong biến mất ngay tháng đầu.</span></li>
@@ -306,6 +306,7 @@
             <li class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Marketing tốn ngân sách nhưng doanh thu cứ ì ạch.</span></li>
         </ul>
         <p class="pp-tagline">Đây không phải vấn đề con người hay ngân sách — đây là vấn đề hệ thống.</p>
+        </div>
         <div class="pp-cta">
             <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="btn-primary">Đặt Lịch Chẩn Đoán</a>
         </div>
@@ -491,7 +492,7 @@
         <div class="contact-btns">
             <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="c-btn navy-btn"><i data-lucide="calendar" class="btn-icon"></i> Đặt Lịch Buổi Chẩn Đoán</a>
             <a href="https://zalo.me/0935292456" class="c-btn outline-btn"><i data-lucide="message-circle" class="btn-icon"></i> Zalo</a>
-            <a href="https://www.facebook.com/TanChauNV/" target="_blank" class="c-btn outline-btn"><i data-lucide="facebook" class="btn-icon"></i> Facebook</a>
+            <a href="https://www.facebook.com/TanChauNV/" target="_blank" class="c-btn outline-btn"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
             <a href="mailto:chau5272@gmail.com" class="c-btn outline-btn"><i data-lucide="mail" class="btn-icon"></i> Email</a>
         </div>
         <div class="trust-strip">
