@@ -380,7 +380,7 @@
                 <div class="bfw-stage">BUILD</div>
                 <h3 class="bfw-title"><i data-lucide="layers" class="bfw-icon"></i> Xây Nền Đúng</h3>
                 <p class="bfw-desc">Không thể tối ưu thứ được xây sai từ đầu. Giai đoạn này xác định ai là khách hàng thật sự, sản phẩm phù hợp với họ ra sao, và onboarding có đủ tạo ra trải nghiệm đầu tiên tốt không.</p>
-                <button class="expand-btn" onclick="toggleExpand(this,'signal-01')"><span class="expand-arrow">→</span><span>Studio bạn đang ở đây?</span></button>
+                <button class="expand-btn" onclick="toggleExpand(this,'signal-01')"><span class="expand-arrow">→</span><span>Studio bạn cần làm gì?</span></button>
                 <div class="expandable" id="signal-01"><div class="bfw-signal" style="margin-top:14px;"><div class="bfw-signal-label">Dấu hiệu nhận biết</div><ul><li>Khách đến nhưng tỷ lệ ở lại thấp</li><li>Marketing chạy nhưng không ra đúng người</li><li>Chủ vẫn đang làm mọi thứ một mình</li></ul></div></div>
             </div>
             <div class="bfw-card">
@@ -388,7 +388,7 @@
                 <div class="bfw-stage">OPTIMIZE</div>
                 <h3 class="bfw-title"><i data-lucide="settings-2" class="bfw-icon"></i> Tối Ưu Vận Hành</h3>
                 <p class="bfw-desc">Giai đoạn này không thêm mới — mà làm đúng và nhất quán hơn những gì đã có. Ngôn ngữ giao tiếp được chuẩn hoá, lộ trình khách hàng không còn rò rỉ, vận hành được đo bằng số.</p>
-                <button class="expand-btn" onclick="toggleExpand(this,'signal-02')"><span class="expand-arrow">→</span><span>Studio bạn đang ở đây?</span></button>
+                <button class="expand-btn" onclick="toggleExpand(this,'signal-02')"><span class="expand-arrow">→</span><span>Studio bạn cần làm gì?</span></button>
                 <div class="expandable" id="signal-02"><div class="bfw-signal" style="margin-top:14px;"><div class="bfw-signal-label">Dấu hiệu nhận biết</div><ul><li>Mỗi HLV nói mỗi kiểu, không nhất quán</li><li>Không biết khách bỏ đi vì lý do gì</li><li>Doanh thu phụ thuộc vào tháng cao điểm</li></ul></div></div>
             </div>
             <div class="bfw-card">
@@ -396,7 +396,7 @@
                 <div class="bfw-stage">SCALE</div>
                 <h3 class="bfw-title"><i data-lucide="trending-up" class="bfw-icon"></i> Chuẩn Hoá Để Nhân Bản</h3>
                 <p class="bfw-desc">Mở chi nhánh thứ hai mà mang theo vấn đề của chi nhánh đầu — đó không phải Scale, đó là nhân đôi rủi ro. Giai đoạn này xây SOP, đào tạo đội ngũ tự vận hành và localize từng khu vực.</p>
-                <button class="expand-btn" onclick="toggleExpand(this,'signal-03')"><span class="expand-arrow">→</span><span>Studio bạn đang ở đây?</span></button>
+                <button class="expand-btn" onclick="toggleExpand(this,'signal-03')"><span class="expand-arrow">→</span><span>Studio bạn cần làm gì?</span></button>
                 <div class="expandable" id="signal-03"><div class="bfw-signal" style="margin-top:14px;"><div class="bfw-signal-label">Dấu hiệu nhận biết</div><ul><li>Chủ phải có mặt mọi thứ mới chạy được</li><li>Nhân viên mới mất rất lâu để làm được việc</li><li>Đang muốn mở thêm nhưng chưa dám</li></ul></div></div>
             </div>
             <div class="bfw-card">
@@ -404,7 +404,7 @@
                 <div class="bfw-stage">SUSTAIN</div>
                 <h3 class="bfw-title"><i data-lucide="repeat-2" class="bfw-icon"></i> Bền Vững Dài Hạn</h3>
                 <p class="bfw-desc">Bền vững không phải là đích đến — là nền tảng để tăng trưởng tiếp. Khách ở lại vì trải nghiệm tốt liên tục, không phải vì khuyến mãi. Đội ngũ không kiệt sức. Doanh thu có thể dự đoán.</p>
-                <button class="expand-btn" onclick="toggleExpand(this,'signal-04')"><span class="expand-arrow">→</span><span>Studio bạn đang ở đây?</span></button>
+                <button class="expand-btn" onclick="toggleExpand(this,'signal-04')"><span class="expand-arrow">→</span><span>Studio bạn cần làm gì?</span></button>
                 <div class="expandable" id="signal-04"><div class="bfw-signal" style="margin-top:14px;"><div class="bfw-signal-label">Dấu hiệu nhận biết</div><ul><li>Renewal đang xử lý thủ công, không có quy trình</li><li>Khách ở lại phụ thuộc vào HLV, không phải studio</li><li>Chủ cảm thấy kiệt sức dù doanh thu ổn</li></ul></div></div>
             </div>
         </div>
@@ -598,6 +598,31 @@ const CATEGORY_LABELS = {
   "skills":      { label: "Skills",                color: "#7B3F9E" },
 };
 
+let ALL_LOADED_POSTS = [];
+let POSTS_VISIBLE = 3;
+const POSTS_PER_PAGE = 3;
+
+function renderPostCard(post) {
+  const cat = CATEGORY_LABELS[post.category] || { label: post.category, color: "#1E3A5F" };
+  const dateStr = post.date ? new Date(post.date).toLocaleDateString("vi-VN", { day:"2-digit", month:"2-digit", year:"numeric" }) : "";
+  return `<div onclick="openPost('${post.slug}')" style="border:1px solid #E3E7ED;border-radius:6px;padding:20px 22px;margin-bottom:16px;cursor:pointer;background:#fff;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(30,58,95,0.10)';this.style.borderColor='#C9A84C';" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E3E7ED';"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="background:${cat.color};color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:3px;">${cat.label}</span><span style="font-size:11px;color:#aaa;">${dateStr}</span></div><h3 style="font-size:16px;font-weight:700;color:#1E3A5F;margin:0 0 8px;line-height:1.4;">${post.title}</h3><p style="font-size:13px;color:#555;line-height:1.6;margin:0;">${post.excerpt}</p></div>`;
+}
+
+function renderInsightsList() {
+  const container = document.getElementById("insights-posts");
+  if (!container) return;
+  const visible = ALL_LOADED_POSTS.slice(0, POSTS_VISIBLE);
+  const hasMore = POSTS_VISIBLE < ALL_LOADED_POSTS.length;
+  container.innerHTML = visible.map(renderPostCard).join("") + (hasMore
+    ? `<div style="text-align:center;margin-top:8px;"><button onclick="loadMorePosts()" style="background:none;border:2px solid #1E3A5F;color:#1E3A5F;padding:12px 36px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.2s;" onmouseover="this.style.background='#1E3A5F';this.style.color='#fff';" onmouseout="this.style.background='none';this.style.color='#1E3A5F';">Xem Thêm</button></div>`
+    : "");
+}
+
+function loadMorePosts() {
+  POSTS_VISIBLE += POSTS_PER_PAGE;
+  renderInsightsList();
+}
+
 async function loadInsightsPosts() {
   const container = document.getElementById("insights-posts");
   if (!container) return;
@@ -609,11 +634,9 @@ async function loadInsightsPosts() {
       container.innerHTML = '<p style="color:#888;font-style:italic;text-align:center;padding:32px 0;">Bài viết sắp ra mắt.</p>';
       return;
     }
-    container.innerHTML = posts.map(post => {
-      const cat = CATEGORY_LABELS[post.category] || { label: post.category, color: "#1E3A5F" };
-      const dateStr = post.date ? new Date(post.date).toLocaleDateString("vi-VN", { day:"2-digit", month:"2-digit", year:"numeric" }) : "";
-      return `<div onclick="openPost('${post.slug}')" style="border:1px solid #E3E7ED;border-radius:6px;padding:20px 22px;margin-bottom:16px;cursor:pointer;background:#fff;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(30,58,95,0.10)';this.style.borderColor='#C9A84C';" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E3E7ED';"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="background:${cat.color};color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:3px;">${cat.label}</span><span style="font-size:11px;color:#aaa;">${dateStr}</span></div><h3 style="font-size:16px;font-weight:700;color:#1E3A5F;margin:0 0 8px;line-height:1.4;">${post.title}</h3><p style="font-size:13px;color:#555;line-height:1.6;margin:0;">${post.excerpt}</p></div>`;
-    }).join("");
+    ALL_LOADED_POSTS = posts;
+    POSTS_VISIBLE = POSTS_PER_PAGE;
+    renderInsightsList();
   } catch(err) { console.warn("Posts:", err.message); }
 }
 
