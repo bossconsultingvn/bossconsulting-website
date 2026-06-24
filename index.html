@@ -242,6 +242,21 @@
         .pp-tagline { font-size: var(--t-body); color: var(--text-mid); font-style: italic; margin-bottom: 36px; text-align: center; }
         .pp-cta { text-align: center; }
 
+
+        /* ── Progressive disclosure ── */
+        .expand-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: var(--t-label); letter-spacing: 2px; text-transform: uppercase;
+            color: var(--gold); border: none; background: none; cursor: pointer;
+            padding: 0; margin-top: 18px; font-family: inherit; font-weight: 700;
+            transition: opacity .2s;
+        }
+        .expand-btn:hover { opacity: 0.65; }
+        .expand-arrow { font-size: 14px; transition: transform .25s; display: inline-block; }
+        .expand-btn.open .expand-arrow { transform: rotate(90deg); }
+        .expandable { display: none; }
+        .expandable.open { display: block; }
+
         @media (max-width: 960px) {
             .pp-grid { grid-template-columns: 1fr; }
             nav { padding: 16px 24px; }
@@ -336,8 +351,11 @@
                 <div class="rule"></div>
                 <p class="about-quote">"Tư duy hệ thống là thứ tôi mang vào ngành fitness — không phải từ sách giáo khoa, mà từ 5 năm quan sát trực tiếp cách studio vận hành từ bên trong."</p>
                 <p>Tôi bắt đầu trong vai trò HLV cá nhân — làm việc trực tiếp với khách, quan sát cách studio vận hành từ bên trong. Sau 5 năm, điều tôi nhận ra là dù chủ studio có đầu tư bao nhiêu vào trang thiết bị, nâng cao chuyên môn cho huấn luyện viên, hay chạy marketing rầm rộ hơn — vẫn không bao giờ giải quyết được bài toán doanh thu và vận hành. Đó là lý do BOSS Framework™ ra đời.</p>
-                <p>Không phải để dạy fitness. Mà để giúp studio đi từ "vẫn đang chạy" đến "đang chạy tốt" — có đo lường, có quy trình, có đội ngũ tự vận hành.</p>
+                <button class="expand-btn" onclick="toggleExpand(this,'about-more')"><span class="expand-arrow">→</span><span>Đọc thêm</span></button>
+                <div class="expandable" id="about-more">
+                <p style="margin-top:16px;">Không phải để dạy fitness. Mà để giúp studio đi từ "vẫn đang chạy" đến "đang chạy tốt" — có đo lường, có quy trình, có đội ngũ tự vận hành.</p>
                 <p>Câu hỏi tôi thường đặt cho chủ studio: <strong>"Nếu bạn biến mất 1–2 tuần, studio có vẫn chạy được không?"</strong></p>
+                </div>
             </div>
             <div class="boss-stack">
                 <div class="boss-row"><div class="b-char">B</div><div class="b-content"><h3>BUILD</h3><p>Xây nền đúng — chân dung khách hàng rõ, sản phẩm phù hợp, onboarding có cấu trúc</p></div></div>
@@ -362,28 +380,32 @@
                 <div class="bfw-stage">BUILD</div>
                 <h3 class="bfw-title"><i data-lucide="layers" class="bfw-icon"></i> Xây Nền Đúng</h3>
                 <p class="bfw-desc">Không thể tối ưu thứ được xây sai từ đầu. Giai đoạn này xác định ai là khách hàng thật sự, sản phẩm phù hợp với họ ra sao, và onboarding có đủ tạo ra trải nghiệm đầu tiên tốt không.</p>
-                <div class="bfw-signal"><div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div><ul><li>Khách đến nhưng tỷ lệ ở lại thấp</li><li>Marketing chạy nhưng không ra đúng người</li><li>Chủ vẫn đang làm mọi thứ một mình</li></ul></div>
+                <button class="expand-btn" onclick="toggleExpand(this,'signal-01')"><span class="expand-arrow">→</span><span>Studio bạn đang ở đây?</span></button>
+                <div class="expandable" id="signal-01"><div class="bfw-signal" style="margin-top:14px;"><div class="bfw-signal-label">Dấu hiệu nhận biết</div><ul><li>Khách đến nhưng tỷ lệ ở lại thấp</li><li>Marketing chạy nhưng không ra đúng người</li><li>Chủ vẫn đang làm mọi thứ một mình</li></ul></div></div>
             </div>
             <div class="bfw-card">
                 <div class="bfw-num">02</div>
                 <div class="bfw-stage">OPTIMIZE</div>
                 <h3 class="bfw-title"><i data-lucide="settings-2" class="bfw-icon"></i> Tối Ưu Vận Hành</h3>
                 <p class="bfw-desc">Giai đoạn này không thêm mới — mà làm đúng và nhất quán hơn những gì đã có. Ngôn ngữ giao tiếp được chuẩn hoá, lộ trình khách hàng không còn rò rỉ, vận hành được đo bằng số.</p>
-                <div class="bfw-signal"><div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div><ul><li>Mỗi HLV nói mỗi kiểu, không nhất quán</li><li>Không biết khách bỏ đi vì lý do gì</li><li>Doanh thu phụ thuộc vào tháng cao điểm</li></ul></div>
+                <button class="expand-btn" onclick="toggleExpand(this,'signal-02')"><span class="expand-arrow">→</span><span>Studio bạn đang ở đây?</span></button>
+                <div class="expandable" id="signal-02"><div class="bfw-signal" style="margin-top:14px;"><div class="bfw-signal-label">Dấu hiệu nhận biết</div><ul><li>Mỗi HLV nói mỗi kiểu, không nhất quán</li><li>Không biết khách bỏ đi vì lý do gì</li><li>Doanh thu phụ thuộc vào tháng cao điểm</li></ul></div></div>
             </div>
             <div class="bfw-card">
                 <div class="bfw-num">03</div>
                 <div class="bfw-stage">SCALE</div>
                 <h3 class="bfw-title"><i data-lucide="trending-up" class="bfw-icon"></i> Chuẩn Hoá Để Nhân Bản</h3>
                 <p class="bfw-desc">Mở chi nhánh thứ hai mà mang theo vấn đề của chi nhánh đầu — đó không phải Scale, đó là nhân đôi rủi ro. Giai đoạn này xây SOP, đào tạo đội ngũ tự vận hành và localize từng khu vực.</p>
-                <div class="bfw-signal"><div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div><ul><li>Chủ phải có mặt mọi thứ mới chạy được</li><li>Nhân viên mới mất rất lâu để làm được việc</li><li>Đang muốn mở thêm nhưng chưa dám</li></ul></div>
+                <button class="expand-btn" onclick="toggleExpand(this,'signal-03')"><span class="expand-arrow">→</span><span>Studio bạn đang ở đây?</span></button>
+                <div class="expandable" id="signal-03"><div class="bfw-signal" style="margin-top:14px;"><div class="bfw-signal-label">Dấu hiệu nhận biết</div><ul><li>Chủ phải có mặt mọi thứ mới chạy được</li><li>Nhân viên mới mất rất lâu để làm được việc</li><li>Đang muốn mở thêm nhưng chưa dám</li></ul></div></div>
             </div>
             <div class="bfw-card">
                 <div class="bfw-num">04</div>
                 <div class="bfw-stage">SUSTAIN</div>
                 <h3 class="bfw-title"><i data-lucide="repeat-2" class="bfw-icon"></i> Bền Vững Dài Hạn</h3>
                 <p class="bfw-desc">Bền vững không phải là đích đến — là nền tảng để tăng trưởng tiếp. Khách ở lại vì trải nghiệm tốt liên tục, không phải vì khuyến mãi. Đội ngũ không kiệt sức. Doanh thu có thể dự đoán.</p>
-                <div class="bfw-signal"><div class="bfw-signal-label">Dấu hiệu studio đang ở giai đoạn này</div><ul><li>Renewal đang xử lý thủ công, không có quy trình</li><li>Khách ở lại phụ thuộc vào HLV, không phải studio</li><li>Chủ cảm thấy kiệt sức dù doanh thu ổn</li></ul></div>
+                <button class="expand-btn" onclick="toggleExpand(this,'signal-04')"><span class="expand-arrow">→</span><span>Studio bạn đang ở đây?</span></button>
+                <div class="expandable" id="signal-04"><div class="bfw-signal" style="margin-top:14px;"><div class="bfw-signal-label">Dấu hiệu nhận biết</div><ul><li>Renewal đang xử lý thủ công, không có quy trình</li><li>Khách ở lại phụ thuộc vào HLV, không phải studio</li><li>Chủ cảm thấy kiệt sức dù doanh thu ổn</li></ul></div></div>
             </div>
         </div>
     </div>
@@ -405,21 +427,23 @@
                 <div class="audit-tag">Studio Đơn · Tier 1 & 2</div>
                 <h3 class="audit-title"><i data-lucide="clipboard-list" class="audit-icon"></i> BOSS Self-Audit</h3>
                 <p class="audit-sub">Dành cho studio đang vận hành một cơ sở — dù quy mô nhỏ hay đã có đội ngũ đông. 20 câu hỏi chẩn đoán toàn diện theo 4 giai đoạn Build · Optimize · Scale · Sustain.</p>
-                <div class="audit-body">
+                <button class="expand-btn" onclick="toggleExpand(this,'audit-self')" style="margin-top:20px;"><span class="expand-arrow">→</span><span>Xem chi tiết</span></button>
+                <div class="expandable" id="audit-self"><div class="audit-body">
                     <div><div class="audit-what-label">Chẩn đoán được gì</div><ul class="audit-list"><li>Chân dung khách hàng có thật sự rõ chưa</li><li>Vận hành đang phụ thuộc vào ai</li><li>Churn đang xảy ra ở đâu trong hành trình khách</li><li>Studio đang ở giai đoạn nào trong BOSS Framework</li></ul></div>
                     <div><div class="audit-what-label">Đầu ra</div><ul class="audit-list"><li>Báo cáo Phase 1 với phát hiện + ưu tiên xử lý</li><li>Lộ trình Phase 2 dựa trên dữ liệu thật</li></ul></div>
-                </div>
-                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="audit-cta">Tôi Đang Ở Tier 1 hoặc 2 — Bắt Đầu Audit</a>
+                </div></div>
+                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="audit-cta" style="margin-top:20px;">Tôi Đang Ở Tier 1 hoặc 2 — Bắt Đầu Audit</a>
             </div>
             <div class="audit-card featured">
                 <div class="audit-tag">Chuỗi 2+ Chi Nhánh · Tier 3</div>
                 <h3 class="audit-title"><i data-lucide="git-branch" class="audit-icon"></i> BOSS Chain-Audit</h3>
                 <p class="audit-sub">Dành cho chủ chuỗi đang vận hành nhiều cơ sở. Chẩn đoán từng chi nhánh lẫn sự nhất quán toàn hệ thống — không gộp chung.</p>
-                <div class="audit-body">
+                <button class="expand-btn" onclick="toggleExpand(this,'audit-chain')" style="margin-top:20px;"><span class="expand-arrow">→</span><span>Xem chi tiết</span></button>
+                <div class="expandable" id="audit-chain"><div class="audit-body">
                     <div><div class="audit-what-label">Bộ công cụ đi kèm</div><ul class="audit-list"><li><strong>Location Avatar Mapping</strong><span>Phân tích chân dung khách hàng theo từng khu vực</span></li><li><strong>Location Assessment (4 Lenses)</strong><span>Đánh giá từng chi nhánh qua 4 góc nhìn: Vận hành · Khách hàng · Đội ngũ · Thị trường</span></li><li><strong>Location Scenario Guide</strong><span>6 kịch bản mở rộng — từ chi nhánh đang yếu đến chi nhánh sắp nhân bản</span></li></ul></div>
                     <div><div class="audit-what-label">Đầu ra</div><ul class="audit-list"><li>Scorecard từng chi nhánh + điểm tổng hệ thống</li><li>Ưu tiên xử lý theo từng cơ sở, không đồng đều</li></ul></div>
-                </div>
-                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="audit-cta audit-cta-featured">Tôi Đang Vận Hành Chuỗi — Bắt Đầu Chain-Audit</a>
+                </div></div>
+                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="audit-cta audit-cta-featured" style="margin-top:20px;">Tôi Đang Vận Hành Chuỗi — Bắt Đầu Chain-Audit</a>
             </div>
         </div>
         <div class="errc-wrap">
@@ -428,13 +452,14 @@
                 <h3 class="audit-title">ERRC — Vị Trí Của BOSS</h3>
                 <p class="audit-sub">So với agency marketing hay consultant thông thường, BOSS chọn một cuộc chơi khác.</p>
             </div>
-            <div class="errc-grid">
+            <button class="expand-btn" onclick="toggleExpand(this,'errc-detail')" style="margin-bottom:4px;"><span class="expand-arrow">→</span><span>Xem BOSS khác biệt như thế nào</span></button>
+            <div class="expandable" id="errc-detail"><div class="errc-grid" style="margin-top:20px;">
                 <div class="errc-cell eliminate"><div class="errc-label">Loại Bỏ</div><div class="errc-desc">Những gì agency thông thường hay làm nhưng BOSS không làm</div><div class="errc-examples"><span>Báo cáo đẹp nhưng không triển khai được</span><span>Tư vấn chung chung, không có dữ liệu từ chính studio</span><span>Giải pháp copy từ mô hình nước ngoài</span></div></div>
                 <div class="errc-cell reduce"><div class="errc-label">Giảm Bớt</div><div class="errc-desc">Những yếu tố BOSS chủ động thu hẹp so với thị trường</div><div class="errc-examples"><span>Số lượng client — ưu tiên chiều sâu hơn chiều rộng</span><span>Phụ thuộc vào consultant sau khi kết thúc engagement</span><span>Thời gian từ chẩn đoán đến có kết quả đầu tiên</span></div></div>
                 <div class="errc-cell raise"><div class="errc-label">Nâng Cao</div><div class="errc-desc">Những điểm BOSS đầu tư vượt mức trung bình của ngành tư vấn</div><div class="errc-examples"><span>Chẩn đoán bằng dữ liệu thật trước khi đề xuất giải pháp</span><span>Deliverable dùng được ngay — không cần dịch hay adapt thêm</span><span>Hiểu ngành từ bên trong — không học từ sách hay case nước ngoài</span></div></div>
                 <div class="errc-cell create"><div class="errc-label">Tạo Mới</div><div class="errc-desc">Những giá trị không có ở agency hay consultant thông thường</div><div class="errc-examples"><span>Hệ thống IP riêng — BOSS Framework với công cụ chẩn đoán độc lập</span><span>Studio tự vận hành được khi consultant rời đi</span><span>SOP + Sales Kit theo kịch bản thực tế của từng studio</span></div></div>
             </div>
-            <div class="errc-note">ERRC là một trong những công cụ BOSS dùng để giúp studio xác định vị trí cạnh tranh.</div>
+            <div class="errc-note">ERRC là một trong những công cụ BOSS dùng để giúp studio xác định vị trí cạnh tranh.</div></div>
         </div>
     </div>
 </section>
@@ -451,22 +476,25 @@
                 <span class="tier-tag">Phase 1</span>
                 <h3 class="svc-title"><i data-lucide="search" class="svc-icon"></i> Chẩn Đoán</h3>
                 <p class="svc-desc">Chẩn đoán toàn diện. Tìm nút thắt thật sự — không phải triệu chứng bề mặt.</p>
-                <ul class="svc-list"><li>BOSS Self-Audit (20 câu hỏi chẩn đoán)</li><li>Phỏng vấn sâu 1–2 buổi với chủ studio</li><li>Phân tích theo 4 giai đoạn BOSS</li><li>Báo cáo Phase 1 với phát hiện + ưu tiên</li></ul>
-                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="svc-cta">Đặt Lịch Buổi Đầu Tiên</a>
+                <button class="expand-btn" onclick="toggleExpand(this,'svc-p1')"><span class="expand-arrow">→</span><span>Bao gồm gì</span></button>
+                <div class="expandable" id="svc-p1"><ul class="svc-list" style="margin-top:14px;"><li>BOSS Self-Audit (20 câu hỏi chẩn đoán)</li><li>Phỏng vấn sâu 1–2 buổi với chủ studio</li><li>Phân tích theo 4 giai đoạn BOSS</li><li>Báo cáo Phase 1 với phát hiện + ưu tiên</li></ul></div>
+                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chau5272/30min'});return false;" class="svc-cta" style="margin-top:20px;">Đặt Lịch Buổi Đầu Tiên</a>
             </div>
             <div class="svc-card feat">
                 <span class="tier-tag">Phase 2</span>
                 <h3 class="svc-title"><i data-lucide="wrench" class="svc-icon"></i> Triển Khai</h3>
                 <p class="svc-desc">Xây và tối ưu hệ thống dựa trên phát hiện từ Phase 1. Có lộ trình rõ, có đầu ra đo lường được.</p>
-                <ul class="svc-list"><li>Sales Kit phù hợp từng kịch bản thực tế</li><li>SOP cho từng vị trí trong studio</li><li>Hệ thống tracking vận hành</li><li>Chiến lược định vị và marketing đúng avatar</li><li>Đào tạo đội ngũ triển khai</li></ul>
-                <a href="#contact" class="svc-cta">Liên Hệ Tư Vấn</a>
+                <button class="expand-btn" onclick="toggleExpand(this,'svc-p2')"><span class="expand-arrow">→</span><span>Bao gồm gì</span></button>
+                <div class="expandable" id="svc-p2"><ul class="svc-list" style="margin-top:14px;"><li>Sales Kit phù hợp từng kịch bản thực tế</li><li>SOP cho từng vị trí trong studio</li><li>Hệ thống tracking vận hành</li><li>Chiến lược định vị và marketing đúng avatar</li><li>Đào tạo đội ngũ triển khai</li></ul></div>
+                <a href="#contact" class="svc-cta" style="margin-top:20px;">Liên Hệ Tư Vấn</a>
             </div>
             <div class="svc-card">
                 <span class="tier-tag">Phase 3</span>
                 <h3 class="svc-title"><i data-lucide="users" class="svc-icon"></i> Đồng Hành</h3>
                 <p class="svc-desc">Đồng hành theo tháng sau Phase 2. Điều chỉnh theo dữ liệu thực, không để hệ thống bị bỏ rơi.</p>
-                <ul class="svc-list"><li>Review định kỳ kết quả vận hành</li><li>Hỗ trợ khi phát sinh vấn đề mới</li><li>Cập nhật SOP theo thực tế</li><li>Tư vấn chiến lược theo giai đoạn</li></ul>
-                <a href="#contact" class="svc-cta">Tìm Hiểu Thêm</a>
+                <button class="expand-btn" onclick="toggleExpand(this,'svc-p3')"><span class="expand-arrow">→</span><span>Bao gồm gì</span></button>
+                <div class="expandable" id="svc-p3"><ul class="svc-list" style="margin-top:14px;"><li>Review định kỳ kết quả vận hành</li><li>Hỗ trợ khi phát sinh vấn đề mới</li><li>Cập nhật SOP theo thực tế</li><li>Tư vấn chiến lược theo giai đoạn</li></ul></div>
+                <a href="#contact" class="svc-cta" style="margin-top:20px;">Tìm Hiểu Thêm</a>
             </div>
         </div>
     </div>
@@ -549,6 +577,19 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() { lucide.createIcons(); });
+
+function toggleExpand(btn, targetId) {
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    const isOpen = el.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    const textEl = btn.querySelector('span:last-child');
+    // Toggle text
+    const openText  = btn.dataset.open  || textEl.textContent;
+    const closeText = btn.dataset.close || 'Thu gọn';
+    if (!btn.dataset.open) btn.dataset.open = textEl.textContent;
+    textEl.textContent = isOpen ? closeText : btn.dataset.open;
+}
 </script>
 <script>
 const CATEGORY_LABELS = {
