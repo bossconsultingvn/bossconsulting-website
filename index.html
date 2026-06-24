@@ -187,12 +187,13 @@
 
         .blog { background: var(--white); }
 
-        .trust-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; border-top: 1px solid var(--cream-dark); border-bottom: 1px solid var(--cream-dark); }
-        .trust-item { padding: 32px 28px; display: flex; align-items: flex-start; gap: 14px; }
+        .trust-block { margin-top: 48px; text-align: center; }
+        .trust-block-title { font-size: var(--t-card); font-weight: 900; color: var(--navy); margin-bottom: 20px; }
+        .trust-block-icon { width: 48px; height: 48px; color: var(--gold); margin: 0 auto 36px; display: block; }
+        .trust-strip { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--cream-dark); }
+        .trust-item { padding: 28px 36px; text-align: center; }
         .trust-item + .trust-item { border-left: 1px solid var(--cream-dark); }
-        .trust-icon { width: 18px; height: 18px; color: var(--gold); display: block; margin-bottom: 10px; }
-        .trust-title { font-size: var(--t-small); font-weight: 900; color: var(--navy); margin-bottom: 6px; display: block; }
-        .trust-body { font-size: var(--t-small); color: var(--text-mid); line-height: 1.7; }
+        .trust-body { font-size: var(--t-body); color: var(--text-mid); line-height: 1.75; }
 
         .bfw-icon, .svc-icon, .btn-icon { display: inline-block; vertical-align: middle; margin-right: 8px; stroke-width: 1.5; }
         .bfw-icon { width: 26px; height: 26px; color: var(--gold); }
@@ -225,15 +226,18 @@
         .pain-points { background: var(--cream); }
         .pain-points .eyebrow { color: var(--gold); }
         .pain-points .rule { background: var(--gold); }
-        .pain-points .sec-title { color: var(--navy); margin-bottom: 48px; font-size: var(--t-card); }
-        .pp-wrap { max-width: 680px; }
-        .pp-list { list-style: none; margin-bottom: 48px; }
-        .pp-item { display: flex; align-items: center; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--cream-dark); }
-        .pp-item:first-child { border-top: 1px solid var(--cream-dark); }
-        .pp-check { color: var(--gold); font-size: 18px; font-weight: 900; flex-shrink: 0; }
-        .pp-text { font-size: var(--t-body); color: var(--navy); line-height: 1.5; font-weight: 700; }
-        .pp-tagline { font-size: var(--t-body); color: var(--navy); font-style: italic; font-weight: 700; line-height: 1.4; margin-bottom: 36px; }
-        .pp-cta { }
+        .pain-points .sec-title { color: var(--navy); margin-bottom: 56px; }
+        .pp-cols { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 56px; }
+        .pp-col { padding: 0 48px; }
+        .pp-col:first-child { padding-left: 0; }
+        .pp-col:last-child { padding-right: 0; }
+        .pp-col + .pp-col { border-left: 1px solid var(--cream-dark); }
+        .pp-item { display: flex; align-items: flex-start; gap: 14px; padding: 18px 0; }
+        .pp-item + .pp-item { border-top: 1px solid var(--cream-dark); }
+        .pp-check { color: var(--gold); font-size: 16px; font-weight: 900; flex-shrink: 0; margin-top: 2px; }
+        .pp-text { font-size: var(--t-body); color: var(--navy); line-height: 1.55; font-weight: 700; }
+        .pp-tagline { font-size: var(--t-body); color: var(--text-mid); font-style: italic; margin-bottom: 36px; text-align: center; }
+        .pp-cta { text-align: center; }
 
         @media (max-width: 960px) {
             .pp-grid { grid-template-columns: 1fr; }
@@ -243,7 +247,9 @@
             .hero { padding: 100px 24px 100px; }
             .hero-headline { font-size: 34px; }
             .hero-stats { position: static; margin-top: 52px; justify-content: flex-start; }
-            .about-grid, .fw-cards, .audit-tracks, .svc-grid, .cases-grid, .bfw-cards, .errc-grid, .trust-strip { grid-template-columns: 1fr; }
+            .about-grid, .fw-cards, .audit-tracks, .svc-grid, .cases-grid, .bfw-cards, .errc-grid, .trust-strip, .pp-cols { grid-template-columns: 1fr; }
+            .pp-col { padding: 0; }
+            .pp-col + .pp-col { border-left: none; border-top: 1px solid var(--cream-dark); padding-top: 18px; }
             .trust-item + .trust-item { border-left: none; border-top: 1px solid var(--cream-dark); }
             .fw-head { flex-direction: column; align-items: flex-start; gap: 12px; }
             footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 24px; }
@@ -296,15 +302,20 @@
         <div class="eyebrow">Nhận Diện Vấn Đề</div>
         <div class="rule"></div>
         <h2 class="sec-title">Bạn có đang gặp tình trạng này?</h2>
-        <div class="pp-wrap">
-        <ul class="pp-list">
-            <li class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Chủ vắng mặt là sợ studio rối tung.</span></li>
-            <li class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Khách đăng ký xong biến mất ngay tháng đầu.</span></li>
-            <li class="pp-item"><span class="pp-check">✓</span><span class="pp-text">PT mỗi người làm một kiểu, không có quy chuẩn.</span></li>
-            <li class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Mỗi chi nhánh vận hành một kiểu.</span></li>
-            <li class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Doanh thu tăng đồng nghĩa chủ càng bận hơn.</span></li>
-            <li class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Marketing tốn ngân sách nhưng doanh thu cứ ì ạch.</span></li>
-        </ul>
+        <div class="pp-cols">
+            <div class="pp-col">
+                <div class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Chủ vắng mặt là sợ studio rối tung.</span></div>
+                <div class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Khách đăng ký xong biến mất ngay tháng đầu.</span></div>
+            </div>
+            <div class="pp-col">
+                <div class="pp-item"><span class="pp-check">✓</span><span class="pp-text">PT mỗi người làm một kiểu, không có quy chuẩn.</span></div>
+                <div class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Mỗi chi nhánh vận hành một kiểu.</span></div>
+            </div>
+            <div class="pp-col">
+                <div class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Doanh thu tăng đồng nghĩa chủ càng bận hơn.</span></div>
+                <div class="pp-item"><span class="pp-check">✓</span><span class="pp-text">Marketing tốn ngân sách nhưng doanh thu cứ ì ạch.</span></div>
+            </div>
+        </div>
         <p class="pp-tagline">Đây không phải vấn đề con người hay ngân sách — đây là vấn đề hệ thống.</p>
         </div>
         <div class="pp-cta">
@@ -495,21 +506,19 @@
             <a href="https://www.facebook.com/TanChauNV/" target="_blank" class="c-btn outline-btn"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
             <a href="mailto:chau5272@gmail.com" class="c-btn outline-btn"><i data-lucide="mail" class="btn-icon"></i> Email</a>
         </div>
-        <div class="trust-strip">
-            <div class="trust-item">
-                <i data-lucide="shield-check" class="trust-icon"></i>
-                <div class="trust-title">Bảo Mật Hoàn Toàn</div>
-                <div class="trust-body">Buổi chẩn đoán đầu tiên không yêu cầu tên thật hay tên studio. Thông tin chỉ cần cung cấp khi hai bên quyết định hợp tác.</div>
-            </div>
-            <div class="trust-item">
-                <i data-lucide="user-x" class="trust-icon"></i>
-                <div class="trust-title">Chẩn Đoán Ẩn Danh</div>
-                <div class="trust-body">Bạn có thể mô tả vấn đề mà không cần tiết lộ danh tính. Tôi đánh giá vấn đề — không phải con người hay thương hiệu.</div>
-            </div>
-            <div class="trust-item">
-                <i data-lucide="lock" class="trust-icon"></i>
-                <div class="trust-title">Không Phán Xét</div>
-                <div class="trust-body">Nói ra vấn đề của doanh nghiệp không phải điều dễ dàng. Tôi hiểu điều đó — và đây là không gian an toàn để bắt đầu.</div>
+        <div class="trust-block">
+            <div class="trust-block-title">Bảo Mật Toàn Diện</div>
+            <i data-lucide="shield-check" class="trust-block-icon"></i>
+            <div class="trust-strip">
+                <div class="trust-item">
+                    <div class="trust-body">Buổi chẩn đoán đầu tiên không yêu cầu tên thật hay tên studio. Thông tin chỉ cần cung cấp khi hai bên quyết định hợp tác.</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-body">Bạn có thể mô tả vấn đề mà không cần tiết lộ danh tính. Tôi đánh giá vấn đề — không phải con người hay thương hiệu.</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-body">Nói ra vấn đề của doanh nghiệp không phải điều dễ dàng. Tôi hiểu điều đó — và đây là không gian an toàn để bắt đầu.</div>
+                </div>
             </div>
         </div>
         <p class="contact-note">Hẹn gặp bạn ở buổi đầu tiên</p>
