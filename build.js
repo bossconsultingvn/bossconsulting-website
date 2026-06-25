@@ -20,11 +20,12 @@ function parseFrontmatter(content) {
 }
 
 let posts = [];
+let mdFiles = [];
 
 if (fs.existsSync(INSIGHTS_DIR)) {
-  const files = fs.readdirSync(INSIGHTS_DIR).filter((f) => f.endsWith(".md"));
+  mdFiles = fs.readdirSync(INSIGHTS_DIR).filter((f) => f.endsWith(".md"));
 
-  files.forEach((filename) => {
+  mdFiles.forEach((filename) => {
     const filepath = path.join(INSIGHTS_DIR, filename);
     const raw = fs.readFileSync(filepath, "utf-8");
     const { meta, body } = parseFrontmatter(raw);
@@ -40,6 +41,15 @@ if (fs.existsSync(INSIGHTS_DIR)) {
   });
 
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+}
+
+// Nếu không có .md files → giữ nguyên posts.json cũ (không ghi đè)
+if (mdFiles.length === 0 && fs.existsSync(OUTPUT_FILE)) {
+  const existing = fs.readFileSync(OUTPUT_FILE, "utf-8").trim();
+  if (existing && existing !== "[]") {
+    console.log("Không có .md files mới — giữ nguyên posts.json hiện tại.");
+    process.exit(0);
+  }
 }
 
 fs.writeFileSync(OUTPUT_FILE, JSON.stringify(posts, null, 2), "utf-8");
