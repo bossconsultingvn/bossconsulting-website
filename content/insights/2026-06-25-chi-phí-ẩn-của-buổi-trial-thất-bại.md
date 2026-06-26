@@ -1,5 +1,5 @@
 ---
-title: CHI PHÍ ẨN CỦA BUỔI TRIAL THẤT BẠI
+title: Chi Phí Ẩn Của Một Buổi Trial Thất Bại
 category: chi-phi-an
 excerpt: Một buổi trial thất bại, studio thường biết kết quả nhưng không biết
   nguyên nhân.
