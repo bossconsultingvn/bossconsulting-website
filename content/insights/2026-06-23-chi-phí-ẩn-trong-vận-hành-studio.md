@@ -1,5 +1,5 @@
 ---
-title: "Chi Phí Ẩn Trong Vận Hành Studio: "
+title: Chi Phí Ẩn Trong Vận Hành Studio
 category: chi-phi-an
 excerpt: Bạn Đang Trả Bằng Cách Nào?
 date: 2026-06-24
