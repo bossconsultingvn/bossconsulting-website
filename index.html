@@ -265,6 +265,21 @@
         .expandable { display: none; }
         .expandable.open { display: block; }
 
+        @media (max-width: 760px) {
+            .principles-grid { grid-template-columns: 1fr !important; }
+            .when-boss-grid { grid-template-columns: 1fr !important; }
+            .when-boss-grid > div[style*="border-left:2px solid var(--gold)"] { border-left: none !important; padding-left: 0 !important; border-top: 2px solid var(--gold); padding-top: 28px; }
+        @media (max-width: 760px) {
+            #when-boss .inner > div[style*="grid-template-columns:1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+            #when-boss div[style*="border-left:1px solid"] {
+                border-left: none !important;
+                padding-left: 0 !important;
+                border-top: 1px solid rgba(201,168,76,0.3);
+                padding-top: 32px;
+            }
+        }
         @media (max-width: 960px) {
             .pp-grid { grid-template-columns: 1fr; }
             nav { padding: 16px 24px; }
@@ -359,18 +374,16 @@
                 <div class="rule"></div>
                 <p>Tôi làm việc với chủ studio khi họ nhận ra studio đang chạy, nhưng có gì đó không ổn mà không biết bắt đầu nhìn từ đâu.</p>
                 <p style="margin-top:14px;font-weight:700;color:var(--navy);font-size:13px;letter-spacing:0.5px;">Thường là một trong những tình huống này:</p>
-                <ul style="margin-top:10px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;">
-                    <li style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);">Doanh thu không tăng dù ads vẫn chạy và khách vẫn inbox.</li>
-                    <li style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);">Renewal rate thấp dù khách nói hài lòng với HLV.</li>
-                    <li style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);">Chủ phải có mặt mọi lúc vì mọi thứ vận hành quanh mình.</li>
-                    <li style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);">Mở chi nhánh mới nhưng không hiểu tại sao kết quả khác nhau rõ rệt.</li>
+                <button class="expand-btn" onclick="toggleExpand(this,'about-detail')" style="margin-top:12px;"><span class="expand-arrow">→</span><span>Xem thêm</span></button>
+                <div class="expandable" id="about-detail">
+                <ul style="margin-top:14px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;">
+                    <li style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);">Doanh thu không tăng dù marketing đủ cách.</li>
+                    <li style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);">Khách đăng ký nhưng rời đi sau vài tháng.</li>
+                    <li style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);">Chủ luôn phải có mặt để xử lý công việc.</li>
+                    <li style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);">Các chi nhánh chạy khác nhau mà không biết tại sao.</li>
+                    <li style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);">Muốn mở rộng nhưng chưa chắc nền móng đủ mạnh.</li>
                 </ul>
-                <p style="margin-top:20px;">Tôi không đến để đưa ra giải pháp ngay. Tôi đến để chẩn đoán vấn đề thật sự trước.</p>
-                <div style="margin-top:28px;padding-top:24px;border-top:1px solid #E3E7ED;">
-                    <p style="font-weight:700;color:var(--navy);font-size:13px;letter-spacing:0.5px;margin-bottom:12px;">B.O.S.S làm gì</p>
-                    <p>Hầu hết chủ studio tôi gặp không thiếu nỗ lực. Họ đang chạy ads, đăng content, HLV làm việc tốt. Nhưng có một khoảng cách giữa "đang cố gắng" và "biết chính xác mình đang giải quyết vấn đề gì."</p>
-                    <p style="margin-top:14px;">B.O.S.S Framework giúp chủ studio tìm ra khoảng cách đó — không phải bằng cách thêm vào danh sách việc cần làm vốn đã dài, mà bằng cách chẩn đoán vấn đề cốt lõi trước khi đề xuất bất cứ thứ gì.</p>
-                    <p style="margin-top:20px;"><strong>"Nếu bạn biến mất 1–2 tuần, studio có vẫn chạy được không?"</strong></p>
+                <p style="margin-top:16px;">Tôi không đến để đưa ra giải pháp ngay. Tôi đến để chẩn đoán vấn đề thật sự trước.</p>
                 </div>
             </div>
             <div class="boss-stack">
@@ -383,13 +396,29 @@
     </div>
 </section>
 
+
+<!-- HOOK -->
+<section style="background:var(--cream);padding:64px 0;text-align:center;">
+    <div class="inner">
+        <p style="font-size:clamp(20px,2.5vw,28px);font-weight:900;color:var(--navy);line-height:1.6;max-width:680px;margin:0 auto;">"Nếu bạn biến mất 1–2 tuần, liệu studio còn chạy ổn không?"</p>
+    </div>
+</section>
+
 <!-- BOSS FRAMEWORK -->
 <section class="boss-fw" id="boss-framework">
     <div class="inner">
         <div class="eyebrow">B.O.S.S Framework™</div>
         <div class="rule"></div>
-        <h2 class="sec-title">Bốn Giai Đoạn Phát Triển<br>Doanh Nghiệp Fitness</h2>
-        <p class="sec-sub">Hầu hết studio thất bại không vì thiếu khách — mà vì nhảy thẳng vào nhân rộng, thêm chi nhánh trước khi khai thác đúng khách hàng lý tưởng, ổn định bộ máy vận hành và nhân sự được trang bị đầy đủ kỹ năng. BOSS Framework ra đời giúp xác định đúng vấn đề thực sự — không phải triệu chứng — đúng việc cần làm và thứ tự cần giải quyết.</p>
+        <h2 class="sec-title">B.O.S.S Là Gì?</h2>
+        <p class="sec-sub">BOSS là viết tắt của Build · Optimize · Scale · Sustain — bốn giai đoạn phát triển của tất cả mọi doanh nghiệp fitness.</p>
+        <div style="margin-top:8px;">
+            <button class="expand-btn" onclick="toggleExpand(this,'boss-what')"><span class="expand-arrow">→</span><span>Tìm hiểu</span></button>
+            <div class="expandable" id="boss-what">
+                <p style="margin-top:16px;font-size:var(--t-body);color:var(--text-mid);line-height:1.85;max-width:780px;">Hầu hết studio thất bại không vì thiếu khách — mà vì nhảy thẳng vào nhân rộng, thêm chi nhánh trước khi khai thác đúng khách hàng lý tưởng, ổn định bộ máy vận hành và nhân sự được trang bị đầy đủ kỹ năng.</p>
+                <p style="margin-top:12px;font-size:var(--t-body);color:var(--text-mid);line-height:1.85;max-width:780px;">BOSS Framework ra đời giúp xác định đúng vấn đề thực sự — không phải triệu chứng — đúng việc cần làm và thứ tự cần giải quyết.</p>
+                <p style="margin-top:12px;font-size:var(--t-body);color:var(--text-mid);line-height:1.85;max-width:780px;">Hầu hết chủ studio tôi gặp không thiếu nỗ lực. Nhưng có một khoảng cách giữa "đang cố gắng" và "biết chính xác mình đang giải quyết vấn đề gì." B.O.S.S Framework giúp tìm ra khoảng cách đó — không phải bằng cách thêm vào danh sách việc cần làm vốn đã dài, mà bằng cách chẩn đoán vấn đề cốt lõi trước khi đề xuất bất cứ thứ gì.</p>
+            </div>
+        </div>
         <div class="bfw-cards">
             <div class="bfw-card">
                 <div class="bfw-num">01</div>
@@ -476,6 +505,97 @@
                 <div class="errc-cell create"><div class="errc-label">Tạo Mới</div><div class="errc-desc">Những giá trị không có ở agency hay consultant thông thường</div><div class="errc-examples"><span>Hệ thống IP riêng — BOSS Framework với công cụ chẩn đoán độc lập</span><span>Studio tự vận hành được khi consultant rời đi</span><span>SOP + Sales Kit theo kịch bản thực tế của từng studio</span></div></div>
             </div>
             <div class="errc-note">ERRC là một trong những công cụ BOSS dùng để giúp studio xác định vị trí cạnh tranh.</div></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- GIÁ TRỊ CỐT LÕI -->
+<section style="background:var(--navy);padding:80px 0;text-align:center;" id="core-value">
+    <div class="inner">
+        <div class="eyebrow" style="color:var(--gold);">Giá Trị Cốt Lõi</div>
+        <div class="rule"></div>
+        <p style="font-size:clamp(22px,2.8vw,32px);font-weight:900;color:#fff;line-height:1.6;max-width:740px;margin:0 auto;">"Đặt câu hỏi đúng để tự bạn tìm đúng giải pháp cho mình."</p>
+    </div>
+</section>
+
+<!-- NGUYÊN TẮC LÀM VIỆC -->
+<section style="background:var(--white);padding:96px 0;" id="principles">
+    <div class="inner">
+        <div class="eyebrow">Cách Tôi Làm Việc</div>
+        <div class="rule"></div>
+        <h2 class="sec-title">Nguyên Tắc Làm Việc</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;" class="principles-grid">
+            <div style="padding:28px;border:1px solid #E3E7ED;border-radius:6px;">
+                <i data-lucide="compass" style="color:var(--gold);width:28px;height:28px;margin-bottom:12px;"></i>
+                <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">Khám phá, không bán</h3>
+                <p style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;">Buổi đầu tiên là để hiểu — không phải để thuyết phục. Không có agenda bán hàng trong bất kỳ buổi chẩn đoán nào.</p>
+            </div>
+            <div style="padding:28px;border:1px solid #E3E7ED;border-radius:6px;">
+                <i data-lucide="shield" style="color:var(--gold);width:28px;height:28px;margin-bottom:12px;"></i>
+                <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">Không xung đột lợi ích</h3>
+                <p style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;">Tôi không bán sản phẩm, không nhận hoa hồng từ nhà cung cấp. Lợi ích của tôi gắn với kết quả của bạn — không có lý do nào khác.</p>
+            </div>
+            <div style="padding:28px;border:1px solid #E3E7ED;border-radius:6px;">
+                <i data-lucide="git-branch" style="color:var(--gold);width:28px;height:28px;margin-bottom:12px;"></i>
+                <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">Nhất quán thương hiệu, linh hoạt địa phương</h3>
+                <p style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;">Giá trị cốt lõi giữ nguyên ở mọi chi nhánh — nhưng cách triển khai được điều chỉnh theo từng khu vực và tệp khách hàng.</p>
+            </div>
+            <div style="padding:28px;border:1px solid #E3E7ED;border-radius:6px;">
+                <i data-lucide="map" style="color:var(--gold);width:28px;height:28px;margin-bottom:12px;"></i>
+                <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">Hướng dẫn, không dạy</h3>
+                <p style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;">Tôi không đứng trên bục giảng. Tôi đi cùng bạn trong quá trình — đặt câu hỏi, phản chiếu, và để bạn tự rút ra kết luận.</p>
+            </div>
+            <div style="padding:28px;border:1px solid #E3E7ED;border-radius:6px;">
+                <i data-lucide="eye" style="color:var(--gold);width:28px;height:28px;margin-bottom:12px;"></i>
+                <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">Nhìn ra vấn đề, không giải quyết thay</h3>
+                <p style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;">Khi tôi rời đi, bạn phải hiểu tại sao giải pháp đó đúng — không chỉ biết phải làm gì. Hiểu thì mới nhân rộng được.</p>
+            </div>
+            <div style="padding:28px;border:1px solid #E3E7ED;border-radius:6px;">
+                <i data-lucide="repeat" style="color:var(--gold);width:28px;height:28px;margin-bottom:12px;"></i>
+                <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">Có thể nhân rộng dựa trên quy trình</h3>
+                <p style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;">Mọi thứ được xây với khả năng nhân rộng trong đầu. Không có giải pháp nào chỉ hoạt động khi tôi còn ở đó.</p>
+            </div>
+            <div style="padding:28px;border:1px solid #E3E7ED;border-radius:6px;">
+                <i data-lucide="heart" style="color:var(--gold);width:28px;height:28px;margin-bottom:12px;"></i>
+                <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">Văn hóa và giá trị là trung tâm</h3>
+                <p style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;">SOP đúng nhưng văn hóa sai thì đội ngũ sẽ tìm cách lách. Mọi hệ thống phải phản ánh được giá trị thật sự của studio.</p>
+            </div>
+            <div style="padding:28px;border:1px solid #E3E7ED;border-radius:6px;">
+                <i data-lucide="anchor" style="color:var(--gold);width:28px;height:28px;margin-bottom:12px;"></i>
+                <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">Đồng hành dài hạn, không phải một lần</h3>
+                <p style="font-size:var(--t-body);color:var(--text-mid);line-height:1.7;">Tăng trưởng không xảy ra trong một buổi tư vấn. Tôi ở lại đủ lâu để thấy thay đổi thật sự xảy ra.</p>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:48px;font-size:clamp(16px,2vw,20px);font-weight:900;color:var(--navy);">Kết quả thực sự thuộc về bạn — không phải thuộc về tôi.</p>
+    </div>
+</section>
+
+<!-- WHEN TO WORK WITH BOSS -->
+<section style="background:var(--cream);" id="when-boss">
+    <div class="inner">
+        <div class="eyebrow">Dành Cho Ai</div>
+        <div class="rule"></div>
+        <h2 class="sec-title">Khi Nào Cần BOSS?</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;" class="when-boss-grid">
+            <div>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:14px;">
+                    <li style="display:flex;align-items:flex-start;gap:12px;font-size:var(--t-body);color:var(--text-mid);line-height:1.7;"><span style="color:var(--gold);font-weight:900;margin-top:2px;flex-shrink:0;">→</span>Khi doanh thu không tăng dù marketing đủ cách.</li>
+                    <li style="display:flex;align-items:flex-start;gap:12px;font-size:var(--t-body);color:var(--text-mid);line-height:1.7;"><span style="color:var(--gold);font-weight:900;margin-top:2px;flex-shrink:0;">→</span>Khi khách đăng ký nhưng rời đi sau vài tháng.</li>
+                    <li style="display:flex;align-items:flex-start;gap:12px;font-size:var(--t-body);color:var(--text-mid);line-height:1.7;"><span style="color:var(--gold);font-weight:900;margin-top:2px;flex-shrink:0;">→</span>Khi chủ luôn phải có mặt để xử lý công việc.</li>
+                    <li style="display:flex;align-items:flex-start;gap:12px;font-size:var(--t-body);color:var(--text-mid);line-height:1.7;"><span style="color:var(--gold);font-weight:900;margin-top:2px;flex-shrink:0;">→</span>Khi các chi nhánh chạy khác nhau mà không biết tại sao.</li>
+                    <li style="display:flex;align-items:flex-start;gap:12px;font-size:var(--t-body);color:var(--text-mid);line-height:1.7;"><span style="color:var(--gold);font-weight:900;margin-top:2px;flex-shrink:0;">→</span>Khi muốn mở rộng nhưng chưa chắc nền móng đủ mạnh.</li>
+                </ul>
+            </div>
+            <div style="border-left:2px solid var(--gold);padding-left:40px;">
+                <p style="font-size:clamp(16px,1.8vw,20px);font-weight:900;color:var(--navy);line-height:1.6;margin-bottom:20px;">Bạn không tìm đến tôi để có thêm ý tưởng.<br>Bạn tìm đến tôi để trả lời chính xác bốn câu hỏi:</p>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;">
+                    <li style="font-size:var(--t-body);color:var(--text-dark);line-height:1.7;padding-left:14px;border-left:2px solid var(--navy);">Studio đang thực sự mắc kẹt ở đâu?</li>
+                    <li style="font-size:var(--t-body);color:var(--text-dark);line-height:1.7;padding-left:14px;border-left:2px solid var(--navy);">Vấn đề nào cần giải quyết trước?</li>
+                    <li style="font-size:var(--t-body);color:var(--text-dark);line-height:1.7;padding-left:14px;border-left:2px solid var(--navy);">Điều gì có thể bỏ qua lúc này?</li>
+                    <li style="font-size:var(--t-body);color:var(--text-dark);line-height:1.7;padding-left:14px;border-left:2px solid var(--navy);">Hệ thống nào cần xây để tăng trưởng tiếp?</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
