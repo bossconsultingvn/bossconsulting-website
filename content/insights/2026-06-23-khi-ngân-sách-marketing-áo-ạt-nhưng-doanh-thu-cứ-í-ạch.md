@@ -1,5 +1,5 @@
 ---
-title: Khi Ngân Sách Marketing đổ ào ạt nhưng doanh thu cứ í ạch
+title: Khi Ngân Sách Marketing đổ ào ạt nhưng doanh thu cứ ì ạch
 category: chi-phi-an
 excerpt: Đôi khi vấn đề không nằm ở campaign sáng tạo hay content hay, mà là
   marketing chưa biết đang nói chuyện với ai.
