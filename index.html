@@ -300,8 +300,20 @@
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJ2MRFSF');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ2MRFSF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
 <nav>
@@ -500,6 +512,7 @@
         </div>
     </div>
 </section>
+
 <section class="framework" id="framework">
     <div class="inner">
         <div class="fw-head">
@@ -552,8 +565,6 @@
     </div>
 </section>
 
-
-
 <!-- NGUYÊN TẮC LÀM VIỆC -->
 <section style="background:var(--white);padding:64px 0;" id="principles">
     <div class="inner">
@@ -597,7 +608,6 @@
         <p style="text-align:center;margin-top:36px;font-size:clamp(14px,1.6vw,17px);font-weight:900;color:var(--navy);">Kết quả thực sự thuộc về bạn — không phải thuộc về tôi.</p>
     </div>
 </section>
-
 
 <!-- SERVICES -->
 <section class="services" id="services">
@@ -719,7 +729,6 @@ function toggleExpand(btn, targetId) {
     const isOpen = el.classList.toggle('open');
     btn.classList.toggle('open', isOpen);
     const textEl = btn.querySelector('span:last-child');
-    // Toggle text
     const openText  = btn.dataset.open  || textEl.textContent;
     const closeText = btn.dataset.close || 'Thu gọn';
     if (!btn.dataset.open) btn.dataset.open = textEl.textContent;
@@ -748,9 +757,7 @@ function renderInsightsList() {
   if (!container) return;
   const visible = ALL_LOADED_POSTS.slice(0, POSTS_VISIBLE);
   const hasMore = POSTS_VISIBLE < ALL_LOADED_POSTS.length;
-  container.innerHTML = visible.map(renderPostCard).join("") + (hasMore
-    ? `<div style="text-align:center;margin-top:8px;"><button onclick="loadMorePosts()" style="background:none;border:2px solid #1E3A5F;color:#1E3A5F;padding:12px 36px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.2s;" onmouseover="this.style.background='#1E3A5F';this.style.color='#fff';" onmouseout="this.style.background='none';this.style.color='#1E3A5F';">Xem Thêm</button></div>`
-    : "");
+  container.innerHTML = visible.map(renderPostCard).join("") + (hasMore ? `<div style="text-align:center;margin-top:8px;"><button onclick="loadMorePosts()" style="background:none;border:2px solid #1E3A5F;color:#1E3A5F;padding:12px 36px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.2s;" onmouseover="this.style.background='#1E3A5F';this.style.color='#fff';" onmouseout="this.style.background='none';this.style.color='#1E3A5F';">Xem Thêm</button></div>` : "");
 }
 
 function loadMorePosts() {
